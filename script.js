@@ -6,112 +6,87 @@ document.addEventListener('DOMContentLoaded', () => {
     if (mobileMenuBtn && navLinks) {
         mobileMenuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            // Toggle aria-expanded for accessibility
-            const expanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true' || false;
-            mobileMenuBtn.setAttribute('aria-expanded', !expanded);
+            const isExpanded = navLinks.classList.contains('active');
+            mobileMenuBtn.setAttribute('aria-expanded', isExpanded);
         });
     }
 
-    // Text size adjustment functionality
-    const increaseTextBtn = document.getElementById('increase-text');
-    const decreaseTextBtn = document.getElementById('decrease-text');
+    // Text size adjustment
+    const increaseTextBtn = document.getElementById('increaseText');
+    const decreaseTextBtn = document.getElementById('decreaseText');
     const body = document.body;
-    
-    // Default text size class
-    if (!body.classList.contains('text-size-1') && 
-        !body.classList.contains('text-size-2') && 
-        !body.classList.contains('text-size-3')) {
-        body.classList.add('text-size-1');
-    }
-
-    if (increaseTextBtn) {
-        increaseTextBtn.addEventListener('click', () => {
-            if (body.classList.contains('text-size-1')) {
-                body.classList.replace('text-size-1', 'text-size-2');
-            } else if (body.classList.contains('text-size-2')) {
-                body.classList.replace('text-size-2', 'text-size-3');
-            }
-            // Store preference in localStorage
-            localStorage.setItem('textSize', body.className);
-        });
-    }
-
-    if (decreaseTextBtn) {
-        decreaseTextBtn.addEventListener('click', () => {
-            if (body.classList.contains('text-size-3')) {
-                body.classList.replace('text-size-3', 'text-size-2');
-            } else if (body.classList.contains('text-size-2')) {
-                body.classList.replace('text-size-2', 'text-size-1');
-            }
-            // Store preference in localStorage
-            localStorage.setItem('textSize', body.className);
-        });
-    }
 
     // Load saved text size preference
-    const savedTextSize = localStorage.getItem('textSize');
-    if (savedTextSize) {
-        body.className = savedTextSize;
+    const savedTextSize = localStorage.getItem('textSize') || '1';
+    body.classList.add(`text-size-${savedTextSize}`);
+
+    if (increaseTextBtn && decreaseTextBtn) {
+        increaseTextBtn.addEventListener('click', () => {
+            const currentSize = parseInt(savedTextSize);
+            if (currentSize < 3) {
+                body.classList.remove(`text-size-${currentSize}`);
+                body.classList.add(`text-size-${currentSize + 1}`);
+                localStorage.setItem('textSize', currentSize + 1);
+            }
+        });
+
+        decreaseTextBtn.addEventListener('click', () => {
+            const currentSize = parseInt(savedTextSize);
+            if (currentSize > 1) {
+                body.classList.remove(`text-size-${currentSize}`);
+                body.classList.add(`text-size-${currentSize - 1}`);
+                localStorage.setItem('textSize', currentSize - 1);
+            }
+        });
     }
 
     // Page reading functionality
-    const readPageBtn = document.getElementById('read-page');
-    
+    const readPageBtn = document.getElementById('readPage');
+    let speechSynthesis = window.speechSynthesis;
+    let isReading = false;
+
     if (readPageBtn) {
         readPageBtn.addEventListener('click', () => {
-            // Get all headings and paragraphs
-            const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
-            const paragraphs = document.querySelectorAll('p');
-            
-            let textToRead = 'Welcome to Silver 60. ';
-            
-            // Add headings to text to read
-            headings.forEach(heading => {
-                textToRead += heading.textContent + '. ';
-            });
-            
-            // Add paragraphs to text to read
-            paragraphs.forEach(paragraph => {
-                textToRead += paragraph.textContent + '. ';
-            });
-            
-            // Use the SpeechSynthesis API to read the text
-            const speech = new SpeechSynthesisUtterance(textToRead);
-            speech.rate = 0.9; // Slightly slower for better comprehension
-            speech.pitch = 1;
-            speech.volume = 1;
-            
-            // Cancel any ongoing speech
-            window.speechSynthesis.cancel();
-            
-            // Read the text
-            window.speechSynthesis.speak(speech);
-            
-            // Add stop reading button if it doesn't exist
-            if (!document.getElementById('stop-reading')) {
-                const stopBtn = document.createElement('button');
-                stopBtn.id = 'stop-reading';
-                stopBtn.textContent = 'Stop Reading';
-                stopBtn.className = 'btn-access';
-                stopBtn.style.backgroundColor = '#e74c3c';
-                stopBtn.style.color = 'white';
-                
-                stopBtn.addEventListener('click', () => {
-                    window.speechSynthesis.cancel();
-                    stopBtn.remove();
-                });
-                
-                document.querySelector('.accessibility-controls').appendChild(stopBtn);
-                
-                // Remove stop button when speech ends
-                speech.onend = () => {
-                    if (document.getElementById('stop-reading')) {
-                        document.getElementById('stop-reading').remove();
-                    }
+            if (isReading) {
+                speechSynthesis.cancel();
+                readPageBtn.textContent = 'Read Page';
+                isReading = false;
+            } else {
+                const mainContent = document.querySelector('main');
+                const text = mainContent.textContent;
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.rate = 0.9; // Slightly slower for better comprehension
+                speechSynthesis.speak(utterance);
+                readPageBtn.textContent = 'Stop Reading';
+                isReading = true;
+
+                utterance.onend = () => {
+                    readPageBtn.textContent = 'Read Page';
+                    isReading = false;
                 };
             }
         });
     }
+
+    // Update copyright year
+    const yearSpan = document.getElementById('currentYear');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
 
     // Pricing toggle functionality
     const billingToggle = document.getElementById('billing-toggle');

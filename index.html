@@ -3,17 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Silver60 - AI Security for Seniors</title>
+    <title>Silver60 - AI-Powered Security for Seniors</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
-    <header>
+    <header class="main-header">
         <div class="container">
-            <div class="logo">
-                <h1>Silver<span>60</span></h1>
-            </div>
-            <nav>
+            <nav class="main-nav">
+                <a href="index.html" class="logo">Silver60</a>
                 <button class="mobile-menu-btn" aria-label="Toggle menu">
                     <span></span>
                     <span></span>
@@ -31,58 +28,71 @@
     </header>
 
     <main>
-        <section class="hero">
+        <!-- Hero Section -->
+        <section class="hero-section">
             <div class="container">
-                <h2>AI Security That Protects Seniors From Online Scams</h2>
-                <p>Silver60 uses advanced technology to keep you safe online, presented in a way that's easy to understand and use.</p>
-                <div class="cta-buttons">
-                    <a href="how-it-works.html" class="btn btn-primary">Check For Scams</a>
-                    <a href="pricing.html" class="btn btn-secondary">Learn More</a>
-                </div>
+                <h1>Protect Your Loved Ones From Scams</h1>
+                <p>Silver60 is your AI-powered safety companion that detects fraud in SMS and emails — designed with seniors in mind.</p>
+                <a href="pricing.html" class="cta-button">Get Started</a>
             </div>
         </section>
 
-        <section class="features">
+        <!-- Features Section -->
+        <section class="features-section">
             <div class="container">
-                <h2>How Silver60 Protects You</h2>
-                <div class="feature-cards">
-                    <div class="card">
-                        <img src="images/shield.svg" alt="Shield icon">
+                <h2>Why Silver60?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <img src="images/shield.svg" alt="Shield Icon" class="feature-icon">
                         <h3>Scam Detection</h3>
-                        <p>We check emails, websites, and messages to identify potential scams before they reach you.</p>
+                        <p>AI reviews texts and emails, alerting users to possible scams instantly.</p>
                     </div>
-                    <div class="card">
-                        <img src="images/family.svg" alt="Family icon">
-                        <p>We explain technology in plain language that anyone can understand - no technical jargon.</p>
-                        <h3>Easy To Understand</h3>
+                    <div class="feature-card">
+                        <img src="images/dashboard.svg" alt="Dashboard Icon" class="feature-icon">
+                        <h3>Easy Dashboard</h3>
+                        <p>Simple, private dashboard tailored for older adults and caregivers.</p>
                     </div>
-                    <div class="card">
-                        <img src="images/support.svg" alt="Support icon">
-                        <h3>24/7 Support</h3>
-                        <p>Get help anytime you need it from our friendly team who specialize in helping seniors.</p>
+                    <div class="feature-card">
+                        <img src="images/peace.svg" alt="Peace Icon" class="feature-icon">
+                        <h3>Peace of Mind</h3>
+                        <p>Protect loved ones from fraud with the latest in AI-powered security.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="testimonial-preview">
+        <!-- Testimonials Section -->
+        <section class="testimonials-section">
             <div class="container">
-                <h2>What Our Users Say</h2>
-                <blockquote>
-                    <p>"Silver60 saved me from sending money to what looked like my grandson. The program alerted me that it was actually a scammer. So thankful!"</p>
-                    <cite>- Margaret, 72</cite>
-                </blockquote>
-                <a href="testimonials.html" class="btn btn-secondary">Read More Stories</a>
+                <h2>What Families Are Saying</h2>
+                <div class="testimonials-grid">
+                    <blockquote>
+                        "My mom almost lost $5,000 to a phishing scam. Silver60 alerted her instantly. It's a lifesaver."
+                        <cite>— Rachel T.</cite>
+                    </blockquote>
+                    <blockquote>
+                        "This service is easy to use and gives me peace of mind knowing my dad's emails are safe."
+                        <cite>— Arjun P.</cite>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready to Keep Your Loved Ones Safe?</h2>
+                <p>Join Silver60 today and empower your family with scam protection that works.</p>
+                <a href="pricing.html" class="cta-button">View Pricing</a>
             </div>
         </section>
     </main>
 
-    <footer>
+    <footer class="main-footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <h2>Silver<span>60</span></h2>
-                    <p>Security and peace of mind for seniors</p>
+                    <img src="images/logo.svg" alt="Silver60 Logo" class="logo-img">
                 </div>
                 <div class="footer-links">
                     <h3>Quick Links</h3>
@@ -96,17 +106,22 @@
                 </div>
                 <div class="footer-contact">
                     <h3>Contact Us</h3>
-                    <p>Phone: (800) 123-4567</p>
-                    <p>Email: help@silver60.com</p>
+                    <p>Email: support@silver60.com</p>
+                    <p>Phone: (800) 555-0123</p>
                 </div>
             </div>
             <div class="accessibility-controls">
-                <button id="increase-text" class="btn-access">A+</button>
-                <button id="decrease-text" class="btn-access">A-</button>
-                <button id="read-page" class="btn-access">Read Page</button>
+                <button id="increaseText" class="accessibility-btn" aria-label="Increase text size">A+</button>
+                <button id="decreaseText" class="accessibility-btn" aria-label="Decrease text size">A-</button>
+                <button id="readPage" class="accessibility-btn" aria-label="Read page">Read Page</button>
             </div>
-            <p class="copyright">© 2023 Silver60. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Silver60 Inc. All rights reserved.</p>
+                <p class="footer-tagline">Built with love for senior safety 🦊</p>
+            </div>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html> 
