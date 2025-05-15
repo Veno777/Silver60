@@ -45,13 +45,27 @@
                         <a href="https://your-beehiiv-signup-url" target="_blank" class="cta-button secondary">Join Free</a>
                     </div>
                     <div class="pricing-card premium">
-                        <h3>Premium <span class="price">$9.99/mo</span></h3>
+                        <h3>Silver60 Plus <span class="price">$9.99/mo</span></h3>
                         <ul>
-                            <li>AI Chatbot</li>
-                            <li>Weekly Zoom sessions</li>
-                            <li>Scam database access</li>
+                            <li>All Free features</li>
+                            <li>Access to AI chatbot trained on scam detection</li>
+                            <li>Weekly Zoom fraud Q&A (live or recorded)</li>
+                            <li>Early access to scam reports or fraud alerts</li>
+                            <li>Priority email support</li>
                         </ul>
-                        <button class="cta-button" style="margin-top:1rem;">Subscribe with Stripe (Coming Soon)</button>
+                        <button id="stripe-subscribe" class="cta-button" type="button">Subscribe with Stripe</button>
+                        <script src="https://js.stripe.com/v3/"></script>
+                        <script>
+                          document.getElementById('stripe-subscribe').onclick = async function() {
+                            const res = await fetch('/api/create-checkout-session', { method: 'POST' });
+                            const data = await res.json();
+                            if (data.url) {
+                              window.location = data.url;
+                            } else {
+                              alert('Stripe error: ' + (data.error || 'Unknown error'));
+                            }
+                          };
+                        </script>
                     </div>
                 </div>
                 <p class="reassure" style="text-align:center;margin-top:2rem;">Cancel anytime. Money-back guarantee in first 7 days.</p>
