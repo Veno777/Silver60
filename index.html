@@ -10,212 +10,365 @@
         body {
             margin: 0;
             font-family: 'Inter', sans-serif;
-            background-color: #f9f9f9;
+            background-color: #fff8e1;
             color: #333;
         }
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
-            background-color: #ffffff;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 1.5rem 2.5rem 1.5rem 2.5rem;
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border-radius: 0 0 24px 24px;
         }
-        header .logo {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: #3f51b5;
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
         }
-        header .join-btn {
+        .nav a {
+            text-decoration: none;
+            color: #2c387e;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.2s;
+        }
+        .nav a:hover {
+            color: #ff7043;
+        }
+        .join-btn {
             background-color: #ff7043;
             color: white;
-            padding: 0.6rem 1.2rem;
+            padding: 0.7rem 1.6rem;
             border: none;
-            border-radius: 8px;
-            font-weight: 600;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-left: 2rem;
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: background 0.3s;
         }
-        header .join-btn:hover {
+        .join-btn:hover {
             background-color: #ff5722;
+        }
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #3f51b5;
+            letter-spacing: 1px;
         }
         .hero {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            padding: 4rem 2rem;
-            background: linear-gradient(to right, #e3f2fd, #fce4ec);
+            padding: 3.5rem 2.5rem 2.5rem 2.5rem;
+            background: #fff3c4;
+            border-radius: 24px;
+            margin: 2rem auto 1.5rem auto;
+            max-width: 1100px;
         }
         .hero-text {
-            max-width: 600px;
-            margin-right: 2rem;
+            max-width: 520px;
         }
         .hero-text h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            font-size: 2.7rem;
+            margin-bottom: 1.2rem;
             color: #2c387e;
+            font-weight: 800;
         }
         .hero-text p {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: #444;
         }
         .hero-text .cta {
-            display: flex;
-            gap: 1rem;
+            margin-top: 1rem;
         }
-        .hero-text .cta input {
-            padding: 0.8rem;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-            font-size: 1rem;
+        .hero-text .cta .join-btn {
+            font-size: 1.2rem;
+            padding: 0.9rem 2.2rem;
+            border-radius: 16px;
         }
-        .hero-text .cta button {
-            background-color: #4caf50;
-            color: white;
-            padding: 0.8rem 1.2rem;
-            border: none;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-        }
-        .hero img {
+        .hero-img {
             max-width: 400px;
             width: 100%;
-            border-radius: 16px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-            animation: float 3s ease-in-out infinite;
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+            border-radius: 24px;
+            margin-left: 2rem;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.10);
+            background: #fff8e1;
         }
         .features {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            padding: 3rem 2rem;
-            background-color: #ffffff;
+            gap: 2.5rem;
+            background: #fff;
+            border-radius: 24px;
+            margin: 0 auto 2rem auto;
+            max-width: 1100px;
+            padding: 2.5rem 1.5rem 2rem 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
         .feature {
-            max-width: 300px;
-            margin: 1rem;
+            flex: 1 1 200px;
+            max-width: 220px;
             text-align: center;
         }
         .feature img {
-            width: 80px;
-            height: 80px;
+            width: 64px;
+            height: 64px;
             margin-bottom: 1rem;
         }
-        .plans {
+        .feature h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #2c387e;
+        }
+        .feature p {
+            font-size: 1rem;
+            color: #555;
+        }
+        .blog-section {
+            background: #fffbe7;
+            border-radius: 24px;
+            max-width: 1100px;
+            margin: 0 auto 2rem auto;
+            padding: 2.5rem 1.5rem 2rem 1.5rem;
+        }
+        .blog-section h2 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #2c387e;
+            margin-bottom: 1.5rem;
+        }
+        .blog-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+        .blog-card {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            max-width: 260px;
+            flex: 1 1 220px;
+            padding: 1.2rem 1rem 1.2rem 1rem;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .blog-card img {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 0.7rem;
+            background: #e3f2fd;
+            height: 110px;
+            object-fit: cover;
+        }
+        .blog-card .date {
+            font-size: 0.9rem;
+            color: #ff7043;
+            font-weight: 600;
+        }
+        .blog-card .title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #2c387e;
+            margin-bottom: 0.2rem;
+        }
+        .plans-section {
             background: #e8f5e9;
-            padding: 3rem 2rem;
+            border-radius: 24px;
+            max-width: 1100px;
+            margin: 0 auto 2rem auto;
+            padding: 2.5rem 1.5rem 2rem 1.5rem;
             text-align: center;
         }
-        .plans h2 {
+        .plans-section h2 {
             font-size: 2rem;
             margin-bottom: 2rem;
             color: #2e7d32;
+            font-weight: 800;
+        }
+        .plans {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
         }
         .plan {
-            background: white;
-            padding: 1.5rem;
-            margin: 1rem auto;
-            max-width: 400px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            background: #fff;
+            padding: 2rem 1.5rem;
+            border-radius: 18px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            max-width: 320px;
+            flex: 1 1 220px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }
         .plan h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            margin-bottom: 0.7rem;
             color: #2e7d32;
+            font-weight: 700;
         }
         .plan ul {
             list-style: none;
             padding: 0;
+            margin-bottom: 1rem;
         }
         .plan li {
             margin: 0.5rem 0;
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            font-size: 1rem;
+            color: #444;
         }
         .plan li i {
             color: #ff7043;
         }
-        footer {
-            background: #eeeeee;
-            padding: 2rem;
-            text-align: center;
-            font-size: 0.9rem;
+        .plan .get-btn {
+            background-color: #3f51b5;
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 0.5rem;
         }
-        .trustpilot {
+        .plan .get-btn:hover {
+            background-color: #2c387e;
+        }
+        .plan.plus {
+            border: 2px solid #ff7043;
+        }
+        footer {
+            background: #fff;
+            padding: 2rem 1rem;
+            text-align: center;
+            font-size: 1rem;
+            color: #888;
+            border-radius: 24px 24px 0 0;
             margin-top: 2rem;
+        }
+        @media (max-width: 900px) {
+            .hero, .features, .blog-section, .plans-section {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 2rem 1rem;
+            }
+            .hero-img {
+                margin: 2rem 0 0 0;
+            }
+            .features, .plans {
+                gap: 1.2rem;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo">Silver60</div>
-        <button class="join-btn">Join Now</button>
+        <div class="logo">SILVER60</div>
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="#features">Features</a>
+            <a href="blog.html">Tips</a>
+            <a href="https://venorths-newsletter.beehiiv.com/subscribe" class="join-btn" target="_blank" rel="noopener">Join Now</a>
+        </nav>
     </header>
 
     <section class="hero">
         <div class="hero-text">
-            <h1>Scam Prevention for Seniors</h1>
-            <p>Stay ahead of online scams and fraud with our free weekly blog, newsletter, and AI-powered tools. Silver60 empowers you to stay safe online, every day.</p>
+            <h1>Silver60: Your Guide to Outsmarting Scams</h1>
+            <p>Weekly insights. AI-powered fraud protection, and live expert support -- just for you.</p>
             <div class="cta">
-                <input type="email" placeholder="Enter your email">
-                <button>Subscribe</button>
+                <a href="https://venorths-newsletter.beehiiv.com/subscribe" class="join-btn" target="_blank" rel="noopener">Join Now</a>
             </div>
         </div>
-        <img src="https://img.icons8.com/color/400/robot-2.png" alt="AI Robot">
+        <img class="hero-img" src="https://img.icons8.com/color/400/robot-2.png" alt="Seniors illustration">
     </section>
 
-    <section class="features">
+    <section class="features" id="features">
         <div class="feature">
-            <img src="https://img.icons8.com/color/96/email-open.png" alt="Email Icon">
-            <h3>Weekly Newsletter</h3>
-            <p>Up-to-date alerts on the latest scams delivered to your inbox.</p>
+            <img src="https://img.icons8.com/color/96/news.png" alt="Blog Icon">
+            <h3>Weekly Scam-Awareness Blog</h3>
+            <p>Stay informed with real-time scam alerts and prevention tips.</p>
         </div>
         <div class="feature">
-            <img src="https://img.icons8.com/fluency/96/security-checked.png" alt="Security Icon">
-            <h3>Fraud Detection Bot</h3>
-            <p>Instant answers to suspicious messages and emails.</p>
+            <img src="https://img.icons8.com/color/96/email-open.png" alt="Newsletter Icon">
+            <h3>Scam Awareness Newsletter</h3>
+            <p>Simple tips and scam news straight to your inbox weekly.</p>
         </div>
         <div class="feature">
-            <img src="https://img.icons8.com/fluency/96/video-call.png" alt="Video Call">
-            <h3>Weekly Zoom Q&A</h3>
+            <img src="https://img.icons8.com/color/96/robot-2.png" alt="AI Assistant Icon">
+            <h3>Scam-Detecting AI Assistant</h3>
+            <p>Instant answers to scam-related concerns 24/7.</p>
+        </div>
+        <div class="feature">
+            <img src="https://img.icons8.com/color/96/video-call.png" alt="Zoom Icon">
+            <h3>Zoom Q&A with Fraud Experts</h3>
             <p>Live or recorded sessions with our fraud prevention specialist.</p>
         </div>
     </section>
 
-    <section class="plans">
+    <section class="blog-section">
+        <h2>Latest from the Blog</h2>
+        <div class="blog-cards">
+            <div class="blog-card">
+                <img src="https://img.icons8.com/color/256/elderly-person.png" alt="Blog 1">
+                <div class="date">April 32, 2024</div>
+                <div class="title">Understanding Common Phishing Scams</div>
+            </div>
+            <div class="blog-card">
+                <img src="https://img.icons8.com/color/256/conference-call.png" alt="Blog 2">
+                <div class="date">April 15, 2024</div>
+                <div class="title">How to Recognize a Social Security Scam</div>
+            </div>
+            <div class="blog-card">
+                <img src="https://img.icons8.com/color/256/elderly-woman.png" alt="Blog 3">
+                <div class="date">April 3, 2024</div>
+                <div class="title">Spotting the Signs of Romance Scams</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="plans-section">
         <h2>Choose Your Plan</h2>
-        <div class="plan">
-            <h3>🟦 Free Plan</h3>
-            <ul>
-                <li><i class="fas fa-check-circle"></i> Weekly scam-awareness blog</li>
-                <li><i class="fas fa-check-circle"></i> Email newsletter</li>
-            </ul>
-        </div>
-        <div class="plan">
-            <h3>🟨 Silver60 Plus — $9.99/month</h3>
-            <ul>
-                <li><i class="fas fa-check-circle"></i> All Free features</li>
-                <li><i class="fas fa-check-circle"></i> Access to AI chatbot trained on scam detection</li>
-                <li><i class="fas fa-check-circle"></i> Weekly Zoom fraud Q&A</li>
-                <li><i class="fas fa-check-circle"></i> Early access to scam reports</li>
-                <li><i class="fas fa-check-circle"></i> Priority email support</li>
-            </ul>
-        </div>
-        <div class="trustpilot">
-            <iframe src="https://widget.trustpilot.com/trustboxes/53aa8912dec7e10d38f59f32/index.html?templateId=53aa8912dec7e10d38f59f32&businessunitId=YOUR_BUSINESS_UNIT_ID&styleHeight=150px&styleWidth=100%25&theme=light" frameborder="0" scrolling="no" width="100%" height="150" style="border: none; overflow: hidden;"></iframe>
+        <div class="plans">
+            <div class="plan">
+                <h3>Free</h3>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Weekly Blog</li>
+                    <li><i class="fas fa-check-circle"></i> Newsletter</li>
+                </ul>
+                <a href="https://venorths-newsletter.beehiiv.com/subscribe" class="get-btn" target="_blank" rel="noopener">Get Started</a>
+            </div>
+            <div class="plan plus">
+                <h3>Silver60 Plus</h3>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> All Free features and plus</li>
+                    <li><i class="fas fa-check-circle"></i> AI assistant</li>
+                </ul>
+                <a href="pricing.html" class="get-btn">Get Started</a>
+            </div>
         </div>
     </section>
 
     <footer>
-        © 2025 Silver60. All rights reserved.
+        &copy; 2025 Silver60. All rights reserved.
     </footer>
 </body>
+</html> 
 </html> 
