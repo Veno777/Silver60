@@ -4,90 +4,212 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Silver60 - Scam Protection for Seniors</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
         body {
+            margin: 0;
             font-family: 'Inter', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
         }
-        .orange-check {
-            color: #f97316;
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #ffffff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        header .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #3f51b5;
+        }
+        header .join-btn {
+            background-color: #ff7043;
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        header .join-btn:hover {
+            background-color: #ff5722;
+        }
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(to right, #e3f2fd, #fce4ec);
+        }
+        .hero-text {
+            max-width: 600px;
+            margin-right: 2rem;
+        }
+        .hero-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2c387e;
+        }
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+        .hero-text .cta {
+            display: flex;
+            gap: 1rem;
+        }
+        .hero-text .cta input {
+            padding: 0.8rem;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+        .hero-text .cta button {
+            background-color: #4caf50;
+            color: white;
+            padding: 0.8rem 1.2rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .hero img {
+            max-width: 400px;
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 3rem 2rem;
+            background-color: #ffffff;
+        }
+        .feature {
+            max-width: 300px;
+            margin: 1rem;
+            text-align: center;
+        }
+        .feature img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1rem;
+        }
+        .plans {
+            background: #e8f5e9;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        .plans h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #2e7d32;
+        }
+        .plan {
+            background: white;
+            padding: 1.5rem;
+            margin: 1rem auto;
+            max-width: 400px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .plan h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2e7d32;
+        }
+        .plan ul {
+            list-style: none;
+            padding: 0;
+        }
+        .plan li {
+            margin: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .plan li i {
+            color: #ff7043;
+        }
+        footer {
+            background: #eeeeee;
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
-    <!-- Header -->
-    <header class="bg-white shadow-sm p-4 flex items-center justify-between">
-        <div class="flex items-center space-x-2">
-            <img src="https://img.icons8.com/color/48/000000/security-checked.png" alt="Silver60 logo" class="w-10 h-10">
-            <h1 class="text-2xl font-bold text-blue-800">Silver60</h1>
-        </div>
-        <a href="https://venorths-newsletter.beehiiv.com/subscribe" class="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold" target="_blank" rel="noopener">Join</a>
+<body>
+    <header>
+        <div class="logo">Silver60</div>
+        <button class="join-btn">Join Now</button>
     </header>
 
-    <!-- Hero -->
-    <section class="bg-blue-100 text-center py-12 px-4">
-        <h2 class="text-4xl font-bold mb-4">Your Guide to Outsmarting Scams</h2>
-        <p class="text-xl mb-6">AI-powered safety, scam education, and weekly expert advice for seniors.</p>
-        <div class="space-x-4">
-            <a href="https://venorths-newsletter.beehiiv.com/subscribe" class="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold" target="_blank" rel="noopener">Join for Free</a>
-            <a href="pricing.html" class="bg-gray-200 px-6 py-3 rounded-full font-semibold">Explore Silver60 Plus</a>
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Scam Prevention for Seniors</h1>
+            <p>Stay ahead of online scams and fraud with our free weekly blog, newsletter, and AI-powered tools. Silver60 empowers you to stay safe online, every day.</p>
+            <div class="cta">
+                <input type="email" placeholder="Enter your email">
+                <button>Subscribe</button>
+            </div>
+        </div>
+        <img src="https://img.icons8.com/color/400/robot-2.png" alt="AI Robot">
+    </section>
+
+    <section class="features">
+        <div class="feature">
+            <img src="https://img.icons8.com/color/96/email-open.png" alt="Email Icon">
+            <h3>Weekly Newsletter</h3>
+            <p>Up-to-date alerts on the latest scams delivered to your inbox.</p>
+        </div>
+        <div class="feature">
+            <img src="https://img.icons8.com/fluency/96/security-checked.png" alt="Security Icon">
+            <h3>Fraud Detection Bot</h3>
+            <p>Instant answers to suspicious messages and emails.</p>
+        </div>
+        <div class="feature">
+            <img src="https://img.icons8.com/fluency/96/video-call.png" alt="Video Call">
+            <h3>Weekly Zoom Q&A</h3>
+            <p>Live or recorded sessions with our fraud prevention specialist.</p>
         </div>
     </section>
 
-    <!-- Features -->
-    <section class="py-12 px-6 bg-white">
-        <h3 class="text-3xl font-bold text-center mb-8">What We Offer</h3>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="bg-blue-50 p-6 rounded-xl shadow">
-                <img src="https://img.icons8.com/color/48/000000/news.png" class="mb-4">
-                <h4 class="font-bold text-lg">Weekly Scam Blog</h4>
-                <p>Stay informed with real-time scam alerts and prevention tips.</p>
-            </div>
-            <div class="bg-blue-50 p-6 rounded-xl shadow">
-                <img src="https://img.icons8.com/color/48/000000/email-open.png" class="mb-4">
-                <h4 class="font-bold text-lg">Email Newsletter</h4>
-                <p>Simple tips and scam news straight to your inbox weekly.</p>
-            </div>
-            <div class="bg-blue-50 p-6 rounded-xl shadow">
-                <img src="https://img.icons8.com/color/48/000000/artificial-intelligence.png" class="mb-4">
-                <h4 class="font-bold text-lg">AI Assistant</h4>
-                <p>Instant answers to scam-related concerns 24/7.</p>
-            </div>
+    <section class="plans">
+        <h2>Choose Your Plan</h2>
+        <div class="plan">
+            <h3>🟦 Free Plan</h3>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> Weekly scam-awareness blog</li>
+                <li><i class="fas fa-check-circle"></i> Email newsletter</li>
+            </ul>
+        </div>
+        <div class="plan">
+            <h3>🟨 Silver60 Plus — $9.99/month</h3>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> All Free features</li>
+                <li><i class="fas fa-check-circle"></i> Access to AI chatbot trained on scam detection</li>
+                <li><i class="fas fa-check-circle"></i> Weekly Zoom fraud Q&A</li>
+                <li><i class="fas fa-check-circle"></i> Early access to scam reports</li>
+                <li><i class="fas fa-check-circle"></i> Priority email support</li>
+            </ul>
         </div>
     </section>
 
-    <!-- Pricing -->
-    <section class="py-12 px-6 bg-gray-100">
-        <h3 class="text-3xl font-bold text-center mb-8">Plans & Pricing</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <!-- Free -->
-            <div class="bg-white p-6 rounded-xl shadow border">
-                <h4 class="text-xl font-bold mb-2">🟦 Free Plan</h4>
-                <ul class="space-y-2">
-                    <li><i class="fas fa-check-circle orange-check"></i> Weekly scam-awareness blog</li>
-                    <li><i class="fas fa-check-circle orange-check"></i> Email newsletter</li>
-                </ul>
-            </div>
-
-            <!-- Silver60 Plus -->
-            <div class="bg-white p-6 rounded-xl shadow border">
-                <h4 class="text-xl font-bold mb-2">🟨 Silver60 Plus — $9.99/month</h4>
-                <ul class="space-y-2">
-                    <li><i class="fas fa-check-circle orange-check"></i> All Free features</li>
-                    <li><i class="fas fa-check-circle orange-check"></i> AI chatbot trained on scam detection</li>
-                    <li><i class="fas fa-check-circle orange-check"></i> Weekly Zoom fraud Q&A</li>
-                    <li><i class="fas fa-check-circle orange-check"></i> Early access to alerts</li>
-                    <li><i class="fas fa-check-circle orange-check"></i> Priority email support</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-blue-900 text-white py-6 text-center text-sm">
-        <p>&copy; 2025 Silver60. All rights reserved. | <a href="#" class="underline">Privacy</a> | <a href="#" class="underline">Contact</a></p>
+    <footer>
+        © 2025 Silver60. All rights reserved.
     </footer>
 </body>
 </html> 
