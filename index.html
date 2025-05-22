@@ -9,17 +9,18 @@
     <style>
         :root {
             --blue: #3f51b5;
-            --yellow: #fff3c4;
+            --blue-dark: #2c387e;
             --gray: #f7f7f7;
             --silver: linear-gradient(90deg, #bfc1c2 0%, #e0e0e0 100%);
             --text: #222;
-            --cta: #ff7043;
-            --cta-hover: #ff5722;
+            --cta: #3f51b5;
+            --cta-hover: #2c387e;
+            --white: #fff;
         }
         body {
             margin: 0;
             font-family: 'Inter', sans-serif;
-            background-color: var(--gray);
+            background-color: var(--white);
             color: var(--text);
         }
         header {
@@ -27,7 +28,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 1.5rem 3rem 1.5rem 3rem;
-            background: #fff;
+            background: var(--white);
             box-shadow: 0 2px 12px rgba(0,0,0,0.06);
             border-radius: 0 0 32px 32px;
             position: sticky;
@@ -56,7 +57,7 @@
         }
         nav a {
             text-decoration: none;
-            color: #2c387e;
+            color: var(--blue-dark);
             font-weight: 600;
             font-size: 1.1rem;
             transition: color 0.2s;
@@ -66,7 +67,7 @@
         }
         .cta-btn {
             background-color: var(--cta);
-            color: white;
+            color: var(--white);
             padding: 0.8rem 2rem;
             border: none;
             border-radius: 16px;
@@ -85,7 +86,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 3.5rem 3rem 2.5rem 3rem;
-            background: var(--yellow);
+            background: var(--white);
             border-radius: 32px;
             margin: 2rem auto 2rem auto;
             max-width: 1200px;
@@ -122,7 +123,7 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 2.5rem;
-            background: #fff;
+            background: var(--white);
             border-radius: 32px;
             margin: 0 auto 2rem auto;
             max-width: 1200px;
@@ -152,7 +153,7 @@
             color: #555;
         }
         .trust-section {
-            background: #f3f7fa;
+            background: var(--gray);
             border-radius: 32px;
             max-width: 1200px;
             margin: 0 auto 2rem auto;
@@ -205,7 +206,7 @@
             margin-top: 0.5rem;
         }
         .plans-section {
-            background: #e8f5e9;
+            background: var(--white);
             border-radius: 32px;
             max-width: 1200px;
             margin: 0 auto 2rem auto;
@@ -225,7 +226,7 @@
             justify-content: center;
         }
         .plan {
-            background: #fff;
+            background: var(--gray);
             padding: 2rem 1.5rem;
             border-radius: 18px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
@@ -277,7 +278,7 @@
             border: 2px solid var(--cta);
         }
         .faq-section {
-            background: #fff;
+            background: var(--white);
             border-radius: 32px;
             max-width: 1200px;
             margin: 0 auto 2rem auto;
@@ -319,14 +320,15 @@
             display: block;
         }
         footer {
-            background: #fff;
+            background: var(--blue-dark);
             padding: 2rem 1rem;
             text-align: center;
             font-size: 1rem;
-            color: #888;
+            color: var(--white);
             border-radius: 32px 32px 0 0;
             margin-top: 2rem;
         }
+        footer a { color: var(--silver); }
         @media (max-width: 900px) {
             .hero, .features, .trust-section, .plans-section, .faq-section {
                 flex-direction: column;
