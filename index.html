@@ -7,11 +7,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
+        :root {
+            --blue: #3f51b5;
+            --yellow: #fff3c4;
+            --gray: #f7f7f7;
+            --silver: linear-gradient(90deg, #bfc1c2 0%, #e0e0e0 100%);
+            --text: #222;
+            --cta: #ff7043;
+            --cta-hover: #ff5722;
+        }
         body {
             margin: 0;
             font-family: 'Inter', sans-serif;
-            background-color: #f7f7f7;
-            color: #222;
+            background-color: var(--gray);
+            color: var(--text);
         }
         header {
             display: flex;
@@ -28,8 +37,17 @@
         .logo {
             font-size: 2.1rem;
             font-weight: 800;
-            color: #3f51b5;
             letter-spacing: 1px;
+        }
+        .logo .silver {
+            background: var(--silver);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        .logo .sixty {
+            color: var(--blue);
         }
         nav {
             display: flex;
@@ -44,10 +62,10 @@
             transition: color 0.2s;
         }
         nav a:hover {
-            color: #ff7043;
+            color: var(--cta);
         }
         .cta-btn {
-            background-color: #ff7043;
+            background-color: var(--cta);
             color: white;
             padding: 0.8rem 2rem;
             border: none;
@@ -59,7 +77,7 @@
             transition: background 0.3s;
         }
         .cta-btn:hover {
-            background-color: #ff5722;
+            background-color: var(--cta-hover);
         }
         .hero {
             display: flex;
@@ -67,7 +85,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 3.5rem 3rem 2.5rem 3rem;
-            background: #f9f6ee;
+            background: var(--yellow);
             border-radius: 32px;
             margin: 2rem auto 2rem auto;
             max-width: 1200px;
@@ -97,6 +115,7 @@
             margin-left: 2rem;
             background: #fff8e1;
             box-shadow: 0 6px 20px rgba(0,0,0,0.10);
+            object-fit: cover;
         }
         .features {
             display: flex;
@@ -119,6 +138,8 @@
             width: 64px;
             height: 64px;
             margin-bottom: 1rem;
+            border-radius: 16px;
+            object-fit: cover;
         }
         .feature h3 {
             font-size: 1.1rem;
@@ -170,6 +191,13 @@
             gap: 0.7rem;
             font-size: 1rem;
             color: #444;
+        }
+        .testimonial img {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 0.7rem;
         }
         .testimonial .author {
             font-weight: 700;
@@ -228,10 +256,10 @@
             color: #444;
         }
         .plan li i {
-            color: #ff7043;
+            color: var(--cta);
         }
         .plan .get-btn {
-            background-color: #3f51b5;
+            background-color: var(--blue);
             color: white;
             padding: 0.7rem 1.5rem;
             border: none;
@@ -246,7 +274,7 @@
             background-color: #2c387e;
         }
         .plan.plus {
-            border: 2px solid #ff7043;
+            border: 2px solid var(--cta);
         }
         .faq-section {
             background: #fff;
@@ -316,7 +344,7 @@
 </head>
 <body>
     <header>
-        <div class="logo">SILVER60</div>
+        <div class="logo"><span class="silver">Silver</span><span class="sixty">60</span></div>
         <nav>
             <a href="index.html">Home</a>
             <a href="#features">Features</a>
@@ -337,7 +365,7 @@
                 <a href="https://venorths-newsletter.beehiiv.com/subscribe" class="cta-btn" target="_blank" rel="noopener">Join Now</a>
             </div>
         </div>
-        <img class="hero-img" src="https://img.icons8.com/color/400/robot-2.png" alt="Seniors illustration">
+        <img class="hero-img" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Elderly couple smiling">
     </section>
 
     <section class="features" id="features">
@@ -373,14 +401,17 @@
         </div>
         <div class="testimonials">
             <div class="testimonial">
+                <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=200&q=80" alt="Margaret, Florida">
                 "Silver60 not only connected me with my grandkids, but gave me the confidence to spot scams before they happen."
                 <div class="author">– Margaret S., Florida</div>
             </div>
             <div class="testimonial">
+                <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=200&q=80" alt="George, California">
                 "The AI assistant is so easy to use. I feel safer online and love the weekly tips!"
                 <div class="author">– George T., California</div>
             </div>
             <div class="testimonial">
+                <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=200&q=80" alt="Linda, New York">
                 "I never thought I'd enjoy learning about online safety, but Silver60 makes it simple and fun."
                 <div class="author">– Linda P., New York</div>
             </div>
