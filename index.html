@@ -327,6 +327,23 @@
                 gap: 1.2rem;
             }
         }
+        .fade-in { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(.5,0,.2,1); }
+        .fade-in.appear { opacity: 1; transform: none; }
+        .scam-week { background: #f7f7f7; border-radius: 18px; padding: 1.5rem; margin: 2rem auto; max-width: 700px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); text-align: center; }
+        .scam-week h3 { color: #b71c1c; margin-bottom: 0.5rem; }
+        .subscribe-banner { background: linear-gradient(90deg, #bfc1c2 0%, #3f51b5 100%); color: #fff; padding: 1.2rem 2rem; border-radius: 16px; text-align: center; font-size: 1.2rem; font-weight: 700; margin: 2rem auto; max-width: 700px; animation: pulse 2s infinite alternate; }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 #3f51b540; } 100% { box-shadow: 0 0 16px 8px #3f51b520; } }
+        .resources-section { background: #f7f7f7; border-radius: 18px; padding: 2rem 1rem; margin: 2rem auto; max-width: 1100px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+        .resources-grid { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; }
+        .resource-card { background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); padding: 1.2rem; max-width: 220px; flex: 1 1 180px; text-align: left; display: flex; flex-direction: column; align-items: flex-start; }
+        .resource-card h4 { color: #3f51b5; font-size: 1.1rem; margin-bottom: 0.5rem; }
+        .resource-card a { color: #2c387e; font-weight: 600; text-decoration: underline; margin-top: 0.5rem; }
+        .carousel { max-width: 900px; margin: 2rem auto; text-align: center; }
+        .carousel-quote { font-size: 1.2rem; font-style: italic; color: #444; min-height: 60px; }
+        .carousel-author { font-weight: 700; color: #2c387e; margin-top: 0.5rem; }
+        .carousel-btns { margin-top: 1rem; }
+        .carousel-btn { background: #3f51b5; color: #fff; border: none; border-radius: 50%; width: 32px; height: 32px; font-size: 1.2rem; margin: 0 0.5rem; cursor: pointer; }
+        .carousel-btn:focus { outline: 2px solid #2c387e; }
     </style>
 </head>
 <body>
@@ -359,22 +376,22 @@
 
     <section class="features" id="features">
         <div class="feature">
-            <img src="images/Screen Shot 2025-05-22 at 12.10.17 PM.png" alt="Weekly Blog">
+            <img src="https://img.icons8.com/color/96/news.png" alt="Blog Icon">
             <h3>Weekly Scam-Awareness Blog</h3>
             <p>Stay informed with real-time scam alerts and prevention tips.</p>
         </div>
         <div class="feature">
-            <img src="images/Screen Shot 2025-05-22 at 12.10.58 PM.png" alt="Newsletter">
+            <img src="https://img.icons8.com/ios-filled/100/3f51b5/new-post.png" alt="Newsletter Icon">
             <h3>Scam Awareness Newsletter</h3>
             <p>Simple tips and scam news straight to your inbox weekly.</p>
         </div>
         <div class="feature">
-            <img src="images/Screen Shot 2025-05-22 at 12.11.16 PM.png" alt="AI Assistant">
+            <img src="https://img.icons8.com/color/96/robot-2.png" alt="AI Assistant Icon">
             <h3>Scam-Detecting AI Assistant</h3>
             <p>Instant answers to scam-related concerns 24/7.</p>
         </div>
         <div class="feature">
-            <img src="images/Screen Shot 2025-04-09 at 5.36.12 PM.png" alt="Zoom Q&A">
+            <img src="https://img.icons8.com/color/96/video-call.png" alt="Zoom Icon">
             <h3>Zoom Q&A with Fraud Experts</h3>
             <p>Live or recorded sessions with our fraud prevention specialist.</p>
         </div>
@@ -488,6 +505,63 @@
         <div style="margin-top:2rem;color:#888;">New scam protection articles are published every week. Check back for more tips and stories!</div>
     </section>
 
+    <div class="scam-week fade-in">
+        <h3>Scam of the Week</h3>
+        <p><strong>Tech Support Fraud:</strong> Scammers pretend to be from Microsoft or Apple and claim your computer is infected. <a href="https://consumer.ftc.gov/articles/how-spot-avoid-and-report-tech-support-scams" target="_blank" rel="noopener">Learn how to avoid tech support scams (FTC)</a></p>
+    </div>
+    <div class="subscribe-banner fade-in">Scams are always adapting. <strong>Subscribe to Silver60</strong> for weekly updates, real scam stories, and expert tips—so you're always one step ahead.</div>
+
+    <section class="resources-section fade-in">
+        <h2 style="text-align:center;">Free Articles & Resources for Fraud Awareness</h2>
+        <div class="resources-grid">
+            <div class="resource-card">
+                <h4>NCOA</h4>
+                <div>Top 5 Financial Scams Targeting Older Adults</div>
+                <a href="https://www.ncoa.org/article/top-5-financial-scams-targeting-older-adults" target="_blank" rel="noopener">Read Article</a>
+            </div>
+            <div class="resource-card">
+                <h4>FTC</h4>
+                <div>Latest Scam Alerts & Consumer Advice</div>
+                <a href="https://consumer.ftc.gov/features/scam-alerts" target="_blank" rel="noopener">See Alerts</a>
+            </div>
+            <div class="resource-card">
+                <h4>FDIC</h4>
+                <div>Money Smart for Older Adults Toolkit (PDF)</div>
+                <a href="https://www.fdic.gov/resources/consumers/money-smart/older-adults.html" target="_blank" rel="noopener">Download Toolkit</a>
+            </div>
+            <div class="resource-card">
+                <h4>CBA</h4>
+                <div>Fraud Prevention Toolkit for Seniors</div>
+                <a href="https://cba.ca/for-seniors" target="_blank" rel="noopener">View Toolkit</a>
+            </div>
+            <div class="resource-card">
+                <h4>NIA</h4>
+                <div>Beware of Scams Targeting Older Adults</div>
+                <a href="https://www.nia.nih.gov/health/beware-scams-targeting-older-adults" target="_blank" rel="noopener">Read Article</a>
+            </div>
+            <div class="resource-card">
+                <h4>AARP</h4>
+                <div>Fraud Watch Network</div>
+                <a href="https://www.aarp.org/money/scams-fraud/" target="_blank" rel="noopener">Visit AARP</a>
+            </div>
+            <div class="resource-card">
+                <h4>Take Five</h4>
+                <div>Stop Fraud Campaign (UK)</div>
+                <a href="https://takefive-stopfraud.org.uk/" target="_blank" rel="noopener">See Campaign</a>
+            </div>
+        </div>
+        <div style="text-align:center;font-size:0.95rem;color:#888;margin-top:1.5rem;">All resources are free to use and share. Please credit the original source when sharing.</div>
+    </section>
+
+    <section class="carousel fade-in">
+        <div class="carousel-quote" id="carousel-quote">"Silver60 not only connected me with my grandkids, but gave me the confidence to spot scams before they happen."</div>
+        <div class="carousel-author" id="carousel-author">– Margaret S., Florida</div>
+        <div class="carousel-btns">
+            <button class="carousel-btn" onclick="showTestimonial(0)">&lt;</button>
+            <button class="carousel-btn" onclick="showTestimonial(1)">&gt;</button>
+        </div>
+    </section>
+
     <footer>
         &copy; 2025 Silver60. All rights reserved. | <a href="#" style="color:#3f51b5;">Privacy Policy</a> | <a href="#" style="color:#3f51b5;">Contact</a>
     </footer>
@@ -499,6 +573,36 @@
                 item.classList.toggle('open');
             });
         });
+
+        // Simple fade-in on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const faders = document.querySelectorAll('.fade-in');
+            const appearOptions = { threshold: 0.1 };
+            const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('appear');
+                    observer.unobserve(entry.target);
+                });
+            }, appearOptions);
+            faders.forEach(fader => { appearOnScroll.observe(fader); });
+        });
+
+        // Simple testimonial carousel
+        const testimonials = [
+            { quote: '"Silver60 not only connected me with my grandkids, but gave me the confidence to spot scams before they happen."', author: '– Margaret S., Florida' },
+            { quote: '"The AI assistant is so easy to use. I feel safer online and love the weekly tips!"', author: '– George T., California' },
+            { quote: '"I never thought I\'d enjoy learning about online safety, but Silver60 makes it simple and fun."', author: '– Linda P., New York' }
+        ];
+        let currentTestimonial = 0;
+        function showTestimonial(idx) {
+            currentTestimonial = idx % testimonials.length;
+            if (currentTestimonial < 0) currentTestimonial = testimonials.length - 1;
+            document.getElementById('carousel-quote').textContent = testimonials[currentTestimonial].quote;
+            document.getElementById('carousel-author').textContent = testimonials[currentTestimonial].author;
+        }
+        // Optional: auto-advance every 8 seconds
+        setInterval(() => { showTestimonial((currentTestimonial+1)%testimonials.length); }, 8000);
     </script>
 </body>
 </html> 
