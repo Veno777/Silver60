@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Silver60 Blog – Scam Education & Empowerment</title>
-    <link rel="stylesheet" href="styles.css">
-    <script async src="https://basicons.xyz/embed.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
         :root {
             --blue: #3f51b5;
@@ -20,9 +20,24 @@
         body {
             background-color: var(--white);
             color: var(--text);
+            font-family: 'Inter', sans-serif;
         }
         header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 3rem 1.5rem 3rem;
             background: var(--white);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border-radius: 0 0 32px 32px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo {
+            font-size: 2.1rem;
+            font-weight: 800;
+            letter-spacing: 1px;
         }
         .logo .silver {
             background: var(--silver);
@@ -34,105 +49,166 @@
         .logo .sixty {
             color: var(--blue);
         }
-        .main-header, .main-nav, .footer-content, .footer-bottom {
-            background: var(--white);
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 2.2rem;
+        }
+        nav a {
+            text-decoration: none;
             color: var(--blue-dark);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.2s;
         }
-        .features-section, .container {
+        nav a:hover {
+            color: var(--cta);
+        }
+        .cta-btn {
+            background-color: var(--cta);
+            color: var(--white);
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 16px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-left: 2rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .cta-btn:hover {
+            background-color: var(--cta-hover);
+        }
+        .hero-section {
             background: var(--white);
+            padding: 4rem 1rem 2rem 1rem;
+            text-align: center;
+            border-radius: 32px;
+            max-width: 900px;
+            margin: 2rem auto 2rem auto;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
-        .feature-card {
-            background: var(--gray);
-            border: 2px solid var(--blue);
+        .hero-section h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--blue-dark);
+            margin-bottom: 1rem;
+        }
+        .hero-section p {
+            font-size: 1.2rem;
+            color: #444;
         }
         .cta-button {
             background-color: var(--cta);
             color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 1.5rem;
+            display: inline-block;
+            transition: background 0.2s;
         }
         .cta-button:hover {
             background-color: var(--cta-hover);
         }
-        .main-footer {
+        .features-section {
+            background: var(--white);
+            border-radius: 32px;
+            max-width: 900px;
+            margin: 0 auto 2rem auto;
+            padding: 2.5rem 1.5rem 2rem 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .features-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--blue-dark);
+        }
+        .features-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+        .feature-card {
+            background: var(--gray);
+            border-radius: 18px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            max-width: 180px;
+            flex: 1 1 120px;
+            padding: 1.2rem 1rem 1.2rem 1rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.7rem;
+        }
+        .feature-card i {
+            font-size: 2.5rem;
+            color: var(--blue);
+            margin-bottom: 0.5rem;
+        }
+        .feature-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--blue-dark);
+            margin-bottom: 0.2rem;
+        }
+        .blog-placeholder {
+            margin-top: 2rem;
+            text-align: center;
+            color: #888;
+        }
+        footer {
             background: var(--blue-dark);
             color: var(--white);
+            padding: 2rem 1rem;
+            text-align: center;
+            font-size: 1rem;
+            border-radius: 32px 32px 0 0;
+            margin-top: 2rem;
         }
         .footer-links a, .footer-contact a { color: var(--silver); }
-        /* Keep all other styles as before */
     </style>
 </head>
 <body>
-    <header class="main-header">
-        <div class="container">
-            <nav class="main-nav">
-                <a href="index.html" class="logo">
-                    <img src="images/Screen Shot 2025-04-09 at 5.20.18 PM.png" alt="SILVER 60 Logo" class="logo-img" style="height:2.5rem;vertical-align:middle;">
-                    <span class="site-title">SILVER <span class="sixty">60</span></span>
-                </a>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="blog.html" class="active">Blog</a></li>
-                    <li><a href="chat.html">Chatbot</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="events.html">Events</a></li>
-                    <li><a href="https://venorths-newsletter.beehiiv.com" target="_blank">Newsletter</a></li>
-                </ul>
-            </nav>
-        </div>
+    <header>
+        <div class="logo"><span class="silver">Silver</span><span class="sixty">60</span></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#features">Features</a>
+            <a href="blog.html" class="active">Blog</a>
+            <a href="#faq">FAQ</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="https://venorths-newsletter.beehiiv.com/subscribe" class="cta-btn" target="_blank" rel="noopener">Join Now</a>
+        </nav>
     </header>
     <main>
         <section class="hero-section">
-            <div class="container" style="max-width:700px;text-align:center;">
-                <h1>Silver60 Blog</h1>
-                <p class="lead">Empowering seniors to outsmart scams. Our mission: protect, educate, and support older adults with practical, up-to-date scam awareness and digital safety tips.</p>
-                <p style="margin-top:1rem;">We believe safety should never come with age limits. Join our community and get the latest scam alerts, expert advice, and real stories every week.</p>
-                <a href="https://venorths-newsletter.beehiiv.com" class="cta-button" target="_blank" style="margin-top:1.5rem;">Subscribe for Weekly Scam Alerts</a>
-            </div>
+            <h1>Silver60 Blog</h1>
+            <p class="lead">Empowering seniors to outsmart scams. Our mission: protect, educate, and support older adults with practical, up-to-date scam awareness and digital safety tips.</p>
+            <p style="margin-top:1rem;">We believe safety should never come with age limits. Join our community and get the latest scam alerts, expert advice, and real stories every week.</p>
+            <a href="https://venorths-newsletter.beehiiv.com" class="cta-button" target="_blank">Subscribe for Weekly Scam Alerts</a>
         </section>
         <section class="features-section">
-            <div class="container">
-                <h2>Categories</h2>
-                <div class="features-grid">
-                    <div class="feature-card"><i class="bsc bsc-mail feature-icon"></i><h3>Email Scams</h3></div>
-                    <div class="feature-card"><i class="bsc bsc-message feature-icon"></i><h3>SMS</h3></div>
-                    <div class="feature-card"><i class="bsc bsc-phone feature-icon"></i><h3>Phone Calls</h3></div>
-                    <div class="feature-card"><i class="bsc bsc-trending-up feature-icon"></i><h3>Trending</h3></div>
-                </div>
-                <div class="blog-placeholder" style="margin-top:2rem;text-align:center;">
-                    <p>Weekly scam breakdowns will appear here soon. Check back every week for new posts!</p>
-                </div>
+            <h2>Categories</h2>
+            <div class="features-grid">
+                <div class="feature-card"><i class="fas fa-envelope-open-text"></i><h3>Email Scams</h3></div>
+                <div class="feature-card"><i class="fas fa-sms"></i><h3>SMS</h3></div>
+                <div class="feature-card"><i class="fas fa-phone-alt"></i><h3>Phone Calls</h3></div>
+                <div class="feature-card"><i class="fas fa-chart-line"></i><h3>Trending</h3></div>
+            </div>
+            <div class="blog-placeholder">
+                <p>Weekly scam breakdowns will appear here soon. Check back every week for new posts!</p>
             </div>
         </section>
     </main>
-    <footer class="main-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="images/Screen Shot 2025-04-09 at 5.20.18 PM.png" alt="SILVER 60 Logo" class="logo-img">
-                    <span class="site-title">SILVER <span class="sixty">60</span></span>
-                </div>
-                <div class="footer-links">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="chat.html">Chatbot</a></li>
-                        <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="events.html">Events</a></li>
-                        <li><a href="https://venorths-newsletter.beehiiv.com" target="_blank">Newsletter</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h3>Contact Us</h3>
-                    <p>Email: support@silver60.com</p>
-                    <p>Phone: (800) 555-0123</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="currentYear"></span> SILVER 60 Inc. All rights reserved.</p>
-                <p class="footer-tagline">Built with love for senior safety 🦊</p>
-            </div>
-        </div>
+    <footer>
+        &copy; 2025 Silver60. All rights reserved. | <a href="#" style="color:#3f51b5;">Privacy Policy</a> | <a href="#" style="color:#3f51b5;">Contact</a>
     </footer>
-    <script src="script.js"></script>
 </body>
 </html> 
