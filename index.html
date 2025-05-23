@@ -8,372 +8,321 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
         :root {
-            --blue: #3f51b5;
-            --blue-dark: #2c387e;
-            --gray: #f7f7f7;
-            --silver: linear-gradient(90deg, #bfc1c2 0%, #e0e0e0 100%);
-            --text: #222;
+            --blue: #2c387e;
+            --blue-light: #3f51b5;
+            --silver: #e0e0e0;
+            --silver-dark: #bfc1c2;
+            --white: #fff;
+            --text: #1a232a;
             --cta: #3f51b5;
             --cta-hover: #2c387e;
-            --white: #fff;
+            --star: #ffb400;
         }
+        html { font-size: 18px; }
         body {
             margin: 0;
             font-family: 'Inter', sans-serif;
-            background-color: var(--white);
+            background: var(--white);
             color: var(--text);
         }
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem 3rem 1.5rem 3rem;
+            padding: 1.2rem 2.5rem;
             background: var(--white);
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-            border-radius: 0 0 32px 32px;
+            box-shadow: 0 2px 12px rgba(44,56,126,0.06);
             position: sticky;
             top: 0;
             z-index: 100;
         }
+        .logo {
+            font-size: 2.1rem;
+            font-weight: 800;
+            color: var(--blue);
+            letter-spacing: 1px;
+        }
         nav {
             display: flex;
-            align-items: center;
-            gap: 2.2rem;
+            gap: 2rem;
         }
         nav a {
             text-decoration: none;
-            color: var(--blue-dark);
+            color: var(--blue-light);
             font-weight: 600;
             font-size: 1.1rem;
             transition: color 0.2s;
         }
-        nav a:hover {
-            color: var(--cta);
-        }
+        nav a:hover, .cta-btn:hover { color: var(--cta); background: var(--silver); }
         .cta-btn {
-            background-color: var(--cta);
+            background: var(--cta);
             color: var(--white);
-            padding: 0.8rem 2rem;
+            padding: 0.7rem 1.7rem;
             border: none;
-            border-radius: 16px;
+            border-radius: 12px;
             font-weight: 700;
             font-size: 1.1rem;
-            margin-left: 2rem;
+            margin-left: 1.5rem;
             cursor: pointer;
             transition: background 0.3s;
         }
-        .cta-btn:hover {
-            background-color: var(--cta-hover);
+        .purpose {
+            background: linear-gradient(90deg, var(--silver-dark) 0%, var(--blue-light) 100%);
+            color: var(--blue);
+            text-align: center;
+            padding: 1.2rem 0.5rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
         }
+        .purpose img { height: 2.2rem; vertical-align: middle; }
         .hero {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
             align-items: center;
-            padding: 3.5rem 3rem 2.5rem 3rem;
+            justify-content: center;
+            gap: 2.5rem;
+            padding: 3rem 1.5rem 2rem 1.5rem;
             background: var(--white);
             border-radius: 32px;
-            margin: 2rem auto 2rem auto;
             max-width: 1200px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            margin: 2rem auto 2rem auto;
+            box-shadow: 0 2px 12px rgba(44,56,126,0.04);
         }
-        .hero-text {
-            max-width: 540px;
-        }
+        .hero-text { max-width: 540px; }
         .hero-text h1 {
-            font-size: 2.8rem;
-            margin-bottom: 1.2rem;
-            color: #2c387e;
+            font-size: 2.5rem;
+            color: var(--blue);
             font-weight: 800;
+            margin-bottom: 1.2rem;
         }
         .hero-text p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
+            font-size: 1.2rem;
             color: #444;
+            margin-bottom: 2rem;
         }
-        .hero-text .cta {
-            margin-top: 1rem;
-        }
+        .hero .cta-btn { font-size: 1.2rem; padding: 1rem 2.2rem; margin: 0; }
         .hero-img {
-            max-width: 420px;
+            max-width: 350px;
             width: 100%;
-            border-radius: 32px;
-            margin-left: 2rem;
-            background: #fff8e1;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.10);
+            border-radius: 24px;
+            background: var(--silver);
+            box-shadow: 0 6px 20px rgba(44,56,126,0.10);
             object-fit: cover;
         }
         .features {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
             background: var(--white);
             border-radius: 32px;
-            margin: 0 auto 2rem auto;
             max-width: 1200px;
+            margin: 0 auto 2rem auto;
             padding: 2.5rem 1.5rem 2rem 1.5rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            box-shadow: 0 2px 8px rgba(44,56,126,0.04);
         }
         .feature {
-            flex: 1 1 200px;
-            max-width: 240px;
             text-align: center;
+            padding: 1.2rem 0.5rem;
         }
-        .feature img {
-            width: 64px;
-            height: 64px;
-            margin-bottom: 1rem;
-            border-radius: 16px;
-            object-fit: cover;
-        }
-        .feature h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: #2c387e;
-        }
-        .feature p {
-            font-size: 1rem;
-            color: #555;
-        }
-        .trust-section {
-            background: var(--gray);
-            border-radius: 32px;
+        .feature img { width: 64px; height: 64px; margin-bottom: 1rem; }
+        .feature h3 { font-size: 1.1rem; font-weight: 700; color: var(--blue); margin-bottom: 0.5rem; }
+        .feature p { font-size: 1rem; color: #555; }
+        .blog-section {
+            background: var(--silver);
+            border-radius: 24px;
             max-width: 1200px;
-            margin: 0 auto 2rem auto;
-            padding: 2.5rem 1.5rem 2rem 1.5rem;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            margin: 2rem auto;
+            padding: 2.5rem 1.5rem;
+            box-shadow: 0 2px 8px rgba(44,56,126,0.04);
         }
-        .trust-logos {
-            display: flex;
-            justify-content: center;
-            gap: 2.5rem;
-            margin-bottom: 1.5rem;
-            flex-wrap: wrap;
-        }
-        .trust-logos img {
-            height: 36px;
-            opacity: 0.7;
-        }
-        .testimonials {
-            display: flex;
-            flex-wrap: wrap;
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 2rem;
-            justify-content: center;
-            margin-top: 1.5rem;
         }
-        .testimonial {
-            background: #fff;
-            border-radius: 18px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-            max-width: 320px;
-            flex: 1 1 220px;
-            padding: 1.2rem 1rem 1.2rem 1rem;
-            text-align: left;
+        .blog-card {
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(44,56,126,0.06);
+            overflow: hidden;
             display: flex;
             flex-direction: column;
-            gap: 0.7rem;
-            font-size: 1rem;
-            color: #444;
+            align-items: stretch;
         }
-        .testimonial img {
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
+        .blog-thumb {
+            width: 100%;
+            height: 160px;
             object-fit: cover;
-            margin-bottom: 0.7rem;
+            background: var(--silver-dark);
         }
-        .testimonial .author {
-            font-weight: 700;
-            color: #2c387e;
-            margin-top: 0.5rem;
+        .blog-content { padding: 1.2rem; flex: 1; display: flex; flex-direction: column; }
+        .blog-content h4 { color: var(--blue); font-size: 1.1rem; margin-bottom: 0.5rem; }
+        .blog-content p { color: #444; font-size: 1rem; margin-bottom: 1rem; }
+        .blog-content .read-btn {
+            background: var(--cta);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            padding: 0.6rem 1.2rem;
+            font-weight: 600;
+            font-size: 1rem;
+            align-self: flex-start;
+            cursor: pointer;
+            transition: background 0.2s;
         }
-        .plans-section {
-            background: var(--white);
-            border-radius: 32px;
-            max-width: 1200px;
-            margin: 0 auto 2rem auto;
-            padding: 2.5rem 1.5rem 2rem 1.5rem;
-            text-align: center;
-        }
-        .plans-section h2 {
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            color: #2e7d32;
-            font-weight: 800;
-        }
-        .plans {
+        .blog-content .read-btn:hover { background: var(--cta-hover); }
+        .plus-testimonial {
             display: flex;
             flex-wrap: wrap;
-            gap: 2rem;
-            justify-content: center;
+            gap: 2.5rem;
+            align-items: stretch;
+            max-width: 1200px;
+            margin: 2rem auto;
+            background: var(--white);
+            border-radius: 24px;
+            box-shadow: 0 2px 8px rgba(44,56,126,0.04);
+            padding: 2.5rem 1.5rem;
         }
-        .plan {
-            background: var(--gray);
-            padding: 2rem 1.5rem;
-            border-radius: 18px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            max-width: 320px;
-            flex: 1 1 220px;
-            text-align: left;
+        .plus {
+            flex: 1 1 320px;
+            min-width: 260px;
+            padding-right: 1.5rem;
+            border-right: 2px solid var(--silver-dark);
+        }
+        .plus h2 { color: var(--blue); font-size: 1.5rem; margin-bottom: 1rem; }
+        .plus ul { list-style: none; padding: 0; }
+        .plus li { margin: 0.7rem 0; font-size: 1rem; display: flex; align-items: center; gap: 0.7rem; }
+        .plus li i { color: var(--cta); font-size: 1.1rem; }
+        .plus .price { font-size: 1.3rem; font-weight: 700; color: var(--blue-light); margin-bottom: 1rem; }
+        .testimonial-col {
+            flex: 1 1 320px;
+            min-width: 260px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding-left: 1.5rem;
+        }
+        .testimonial-quote {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #444;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 2.2rem;
+        }
+        .testimonial-quote:before {
+            content: '“';
+            font-size: 2.5rem;
+            color: var(--cta);
+            position: absolute;
+            left: 0;
+            top: -0.7rem;
+        }
+        .testimonial-stars { color: var(--star); font-size: 1.3rem; margin-bottom: 0.3rem; }
+        .testimonial-author { font-weight: 700; color: var(--blue); }
+        .newsletter-section {
+            background: var(--silver);
+            border-radius: 24px;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2.5rem 1.5rem;
+            box-shadow: 0 2px 8px rgba(44,56,126,0.04);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2.5rem;
+            justify-content: space-between;
+        }
+        .newsletter-form {
+            flex: 1 1 320px;
+            min-width: 260px;
             display: flex;
             flex-direction: column;
             gap: 1rem;
         }
-        .plan h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.7rem;
-            color: #2e7d32;
-            font-weight: 700;
-        }
-        .plan ul {
-            list-style: none;
-            padding: 0;
-            margin-bottom: 1rem;
-        }
-        .plan li {
-            margin: 0.5rem 0;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+        .newsletter-form label { font-weight: 600; color: var(--blue); }
+        .newsletter-form input[type="email"] {
+            padding: 0.8rem;
+            border-radius: 8px;
+            border: 1px solid var(--silver-dark);
             font-size: 1rem;
-            color: #444;
         }
-        .plan li i {
-            color: var(--cta);
-        }
-        .plan .get-btn {
-            background-color: var(--blue);
-            color: white;
-            padding: 0.7rem 1.5rem;
+        .newsletter-form button {
+            background: var(--cta);
+            color: var(--white);
             border: none;
-            border-radius: 10px;
+            border-radius: 8px;
+            padding: 0.8rem 1.5rem;
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 1.1rem;
             cursor: pointer;
             transition: background 0.2s;
-            margin-top: 0.5rem;
         }
-        .plan .get-btn:hover {
-            background-color: #2c387e;
-        }
-        .plan.plus {
-            border: 2px solid var(--cta);
-        }
-        .faq-section {
-            background: var(--white);
-            border-radius: 32px;
-            max-width: 1200px;
-            margin: 0 auto 2rem auto;
-            padding: 2.5rem 1.5rem 2rem 1.5rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-        }
-        .faq-section h2 {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: #2c387e;
-            margin-bottom: 1.5rem;
-        }
-        .faq {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        .faq-item {
-            margin-bottom: 1.2rem;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 1rem;
-        }
-        .faq-q {
-            font-weight: 700;
-            color: #2c387e;
-            cursor: pointer;
-            font-size: 1.1rem;
-            margin-bottom: 0.3rem;
+        .newsletter-form button:hover { background: var(--cta-hover); }
+        .contact-info {
+            flex: 1 1 320px;
+            min-width: 260px;
             display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            flex-direction: column;
+            gap: 1.2rem;
+            color: var(--blue);
+            font-size: 1.1rem;
         }
-        .faq-a {
-            font-size: 1rem;
-            color: #444;
-            display: none;
-            margin-top: 0.3rem;
-        }
-        .faq-item.open .faq-a {
-            display: block;
-        }
+        .contact-info i { color: var(--cta); margin-right: 0.7rem; }
         footer {
             background: var(--blue-dark);
+            color: var(--white);
             padding: 2rem 1rem;
             text-align: center;
             font-size: 1rem;
-            color: var(--white);
             border-radius: 32px 32px 0 0;
             margin-top: 2rem;
         }
         footer a { color: var(--silver); }
         @media (max-width: 900px) {
-            .hero, .features, .trust-section, .plans-section, .faq-section {
+            .hero, .features, .plus-testimonial, .newsletter-section {
                 flex-direction: column;
                 align-items: stretch;
                 padding: 2rem 1rem;
             }
-            .hero-img {
-                margin: 2rem 0 0 0;
-            }
-            .features, .plans {
-                gap: 1.2rem;
-            }
+            .hero-img { margin: 2rem 0 0 0; }
+            .features, .plans { gap: 1.2rem; }
+            .plus { border-right: none; padding-right: 0; border-bottom: 2px solid var(--silver-dark); margin-bottom: 2rem; }
+            .testimonial-col { padding-left: 0; }
+            .newsletter-section { gap: 1.5rem; }
         }
-        .fade-in { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(.5,0,.2,1); }
-        .fade-in.appear { opacity: 1; transform: none; }
-        .scam-week { background: #f7f7f7; border-radius: 18px; padding: 1.5rem; margin: 2rem auto; max-width: 700px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); text-align: center; }
-        .scam-week h3 { color: #b71c1c; margin-bottom: 0.5rem; }
-        .subscribe-banner { background: linear-gradient(90deg, #bfc1c2 0%, #3f51b5 100%); color: #fff; padding: 1.2rem 2rem; border-radius: 16px; text-align: center; font-size: 1.2rem; font-weight: 700; margin: 2rem auto; max-width: 700px; animation: pulse 2s infinite alternate; }
-        @keyframes pulse { 0% { box-shadow: 0 0 0 0 #3f51b540; } 100% { box-shadow: 0 0 16px 8px #3f51b520; } }
-        .resources-section { background: #f7f7f7; border-radius: 18px; padding: 2rem 1rem; margin: 2rem auto; max-width: 1100px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
-        .resources-grid { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; }
-        .resource-card { background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); padding: 1.2rem; max-width: 220px; flex: 1 1 180px; text-align: left; display: flex; flex-direction: column; align-items: flex-start; }
-        .resource-card h4 { color: #3f51b5; font-size: 1.1rem; margin-bottom: 0.5rem; }
-        .resource-card a { color: #2c387e; font-weight: 600; text-decoration: underline; margin-top: 0.5rem; }
-        .carousel { max-width: 900px; margin: 2rem auto; text-align: center; }
-        .carousel-quote { font-size: 1.2rem; font-style: italic; color: #444; min-height: 60px; }
-        .carousel-author { font-weight: 700; color: #2c387e; margin-top: 0.5rem; }
-        .carousel-btns { margin-top: 1rem; }
-        .carousel-btn { background: #3f51b5; color: #fff; border: none; border-radius: 50%; width: 32px; height: 32px; font-size: 1.2rem; margin: 0 0.5rem; cursor: pointer; }
-        .carousel-btn:focus { outline: 2px solid #2c387e; }
     </style>
 </head>
 <body>
     <header>
-        <a href="index.html" class="logo">
-            <img src="images/Silver60-logo.png" alt="Silver60 Logo" class="logo-img" style="height:2.5rem;vertical-align:middle;">
-        </a>
+        <div class="logo">Silver60</div>
         <nav>
-            <a href="index.html">Home</a>
             <a href="#features">Features</a>
+            <a href="#blog">Blog</a>
+            <a href="#plus">Silver60 Plus</a>
             <a href="#newsletter">Newsletter</a>
             <a href="#faq">FAQ</a>
-            <a href="#about">About</a>
             <a href="#contact">Contact</a>
-            <a href="#pricing">Pricing</a>
             <a href="https://venorths-newsletter.beehiiv.com/subscribe" class="cta-btn" target="_blank" rel="noopener">Join Now</a>
         </nav>
     </header>
-
+    <section class="purpose">
+        <img src="https://img.icons8.com/ios-filled/50/2c387e/security-checked.png" alt="Shield Icon"/>
+        Protecting seniors from scams and fraud through AI-powered tools and weekly education.
+    </section>
     <section class="hero">
         <div class="hero-text">
             <h1>Silver60: Your Guide to Outsmarting Scams</h1>
             <p>Weekly insights. AI-powered fraud protection, and live expert support -- just for you.</p>
-            <div class="cta">
-                <a href="https://venorths-newsletter.beehiiv.com/subscribe" class="cta-btn" target="_blank" rel="noopener">Join Now</a>
-            </div>
+            <a href="https://venorths-newsletter.beehiiv.com/subscribe" class="cta-btn" target="_blank" rel="noopener">Join Now</a>
         </div>
-        <img class="hero-img" src="images/Screen Shot 2025-05-22 at 12.09.27 PM.png" alt="Silver60 seniors smiling">
+        <img class="hero-img" src="https://img.icons8.com/fluency/400/elderly-person.png" alt="Elderly Person Illustration"/>
     </section>
-
     <section class="features" id="features">
         <div class="feature">
             <img src="https://img.icons8.com/color/96/news.png" alt="Blog Icon">
@@ -396,205 +345,75 @@
             <p>Live or recorded sessions with our fraud prevention specialist.</p>
         </div>
     </section>
-
-    <section class="trust-section">
-        <div class="testimonials">
-            <img src="images/Screen Shot 2025-04-09 at 5.15.03 PM.png" alt="Silver60 community" style="max-width:180px;float:right;margin:0 0 1rem 1rem;border-radius:16px;">
-            <div class="testimonial">
-                <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=200&q=80" alt="Margaret, Florida">
-                "Silver60 not only connected me with my grandkids, but gave me the confidence to spot scams before they happen."
-                <div class="author">– Margaret S., Florida</div>
+    <section class="blog-section" id="blog">
+        <h2>Latest Blog Posts</h2>
+        <div class="blog-grid">
+            <div class="blog-card">
+                <img class="blog-thumb" src="images/Screen Shot 2025-05-22 at 12.10.17 PM.png" alt="Phishing Email">
+                <div class="blog-content">
+                    <h4>How to Spot a Phishing Email</h4>
+                    <p>Learn the red flags of phishing emails and how to protect yourself from online scams.</p>
+                    <a href="#" class="read-btn">Read More</a>
+                </div>
             </div>
-            <div class="testimonial">
-                <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=200&q=80" alt="George, California">
-                "The AI assistant is so easy to use. I feel safer online and love the weekly tips!"
-                <div class="author">– George T., California</div>
+            <div class="blog-card">
+                <img class="blog-thumb" src="images/Screen Shot 2025-05-22 at 12.10.58 PM.png" alt="Phone Scams">
+                <div class="blog-content">
+                    <h4>Phone Scams Targeting Seniors</h4>
+                    <p>Discover the most common phone scams and what to do if you receive a suspicious call.</p>
+                    <a href="#" class="read-btn">Read More</a>
+                </div>
             </div>
-            <div class="testimonial">
-                <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=200&q=80" alt="Linda, New York">
-                "I never thought I'd enjoy learning about online safety, but Silver60 makes it simple and fun."
-                <div class="author">– Linda P., New York</div>
+            <div class="blog-card">
+                <img class="blog-thumb" src="images/Screen Shot 2025-05-22 at 12.11.16 PM.png" alt="Social Media Scams">
+                <div class="blog-content">
+                    <h4>Trending: Social Media Scams</h4>
+                    <p>Stay up to date on the latest scams spreading on Facebook and Instagram.</p>
+                    <a href="#" class="read-btn">Read More</a>
+                </div>
             </div>
-        </div>
-    </section>
-
-    <section class="plans-section" id="pricing">
-        <h2>Our Plans</h2>
-        <div class="plans">
-            <div class="plan">
-                <h3>Free Plan – Always Free</h3>
-                <ul>
-                    <li><i class="fa-solid fa-check"></i> Weekly scam-awareness blog</li>
-                    <li><i class="fa-solid fa-check"></i> Educational tips & guides</li>
-                    <li><i class="fa-solid fa-check"></i> Community support</li>
-                    <li><i class="fa-solid fa-xmark" style="color:#bbb;"></i> 24/7 AI chatbot</li>
-                    <li><i class="fa-solid fa-xmark" style="color:#bbb;"></i> Live Q&A sessions</li>
-                </ul>
-                <a href="https://venorths-newsletter.beehiiv.com/subscribe" class="get-btn" target="_blank" rel="noopener">Get Started</a>
-            </div>
-            <div class="plan plus">
-                <h3>Silver60 Plus — $9.99/month</h3>
-                <ul>
-                    <li><i class="fa-solid fa-check"></i> Everything in Free</li>
-                    <li><i class="fa-solid fa-check"></i> 24/7 AI chatbot support</li>
-                    <li><i class="fa-solid fa-check"></i> Weekly Zoom Q&A sessions</li>
-                    <li><i class="fa-solid fa-check"></i> Personalized scam alerts</li>
-                    <li><i class="fa-solid fa-check"></i> Priority email support</li>
-                </ul>
-                <a href="https://venorths-newsletter.beehiiv.com/subscribe" class="get-btn" target="_blank" rel="noopener">Upgrade Now</a>
-            </div>
-        </div>
-        <div style="margin-top:2rem;">
-            <h3>Why Silver60?</h3>
-            <p>We support seniors who have been ignored by traditional banking and tech companies. Our mission is to empower you with knowledge, tools, and a caring community so you can navigate the digital world with confidence.</p>
-            <h3>Reassurance</h3>
-            <p>Cancel anytime. 30-day money-back guarantee. No hidden fees—just support and peace of mind.</p>
-        </div>
-    </section>
-
-    <section class="faq-section" id="faq">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq">
-            <div class="faq-item">
-                <div class="faq-q">What is included in my Silver60 plan? <span>+</span></div>
-                <div class="faq-a">Every Silver60 plan includes access to our weekly blog, scam awareness newsletter, and AI-powered scam detection assistant. Silver60 Plus adds 24/7 AI support and live Zoom Q&A sessions.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-q">How do I join Silver60? <span>+</span></div>
-                <div class="faq-a">Click the "Join Now" button at the top or in the hero section to sign up for our free newsletter or upgrade to Silver60 Plus for premium features.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-q">Can I cancel anytime? <span>+</span></div>
-                <div class="faq-a">Yes! You can cancel your subscription at any time, no questions asked.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-q">Is Silver60 safe for seniors? <span>+</span></div>
-                <div class="faq-a">Absolutely. Silver60 is designed specifically for older adults, with privacy, security, and ease of use as our top priorities.</div>
+            <div class="blog-card">
+                <img class="blog-thumb" src="images/Screen Shot 2025-04-09 at 5.36.12 PM.png" alt="Protecting Personal Info">
+                <div class="blog-content">
+                    <h4>Protecting Your Personal Information</h4>
+                    <p>Tips for keeping your personal and financial information safe online.</p>
+                    <a href="#" class="read-btn">Read More</a>
+                </div>
             </div>
         </div>
     </section>
-
-    <section class="plans-section" id="newsletter">
-        <h2>Newsletter</h2>
-        <div class="plans">
-            <div class="plan">
-                <h3>How to Spot a Phishing Email</h3>
-                <p>Learn the red flags of phishing emails and how to protect yourself from online scams.</p>
-            </div>
-            <div class="plan">
-                <h3>Phone Scams Targeting Seniors</h3>
-                <p>Discover the most common phone scams and what to do if you receive a suspicious call.</p>
-            </div>
-            <div class="plan">
-                <h3>Trending: Social Media Scams</h3>
-                <p>Stay up to date on the latest scams spreading on Facebook and Instagram.</p>
-            </div>
-            <div class="plan">
-                <h3>Protecting Your Personal Information</h3>
-                <p>Tips for keeping your personal and financial information safe online.</p>
-            </div>
+    <section class="plus-testimonial" id="plus">
+        <div class="plus">
+            <h2>Silver60 Plus — $9.99/month</h2>
+            <div class="price">$9.99/month</div>
+            <ul>
+                <li><i class="fa-solid fa-check"></i> Everything in Free</li>
+                <li><i class="fa-solid fa-check"></i> 24/7 AI chatbot support</li>
+                <li><i class="fa-solid fa-check"></i> Weekly Zoom Q&A sessions</li>
+                <li><i class="fa-solid fa-check"></i> Personalized scam alerts</li>
+                <li><i class="fa-solid fa-check"></i> Priority email support</li>
+            </ul>
+            <a href="https://venorths-newsletter.beehiiv.com/subscribe" class="cta-btn" target="_blank" rel="noopener">Upgrade Now</a>
         </div>
-        <div style="margin-top:2rem;color:#888;">New scam protection articles are published every week. Check back for more tips and stories!</div>
-    </section>
-
-    <div class="scam-week fade-in">
-        <h3>Scam of the Week</h3>
-        <p><strong>Tech Support Fraud:</strong> Scammers pretend to be from Microsoft or Apple and claim your computer is infected. <a href="https://consumer.ftc.gov/articles/how-spot-avoid-and-report-tech-support-scams" target="_blank" rel="noopener">Learn how to avoid tech support scams (FTC)</a></p>
-    </div>
-    <div class="subscribe-banner fade-in">Scams are always adapting. <strong>Subscribe to Silver60</strong> for weekly updates, real scam stories, and expert tips—so you're always one step ahead.</div>
-
-    <section class="resources-section fade-in">
-        <h2 style="text-align:center;">Free Articles & Resources for Fraud Awareness</h2>
-        <div class="resources-grid">
-            <div class="resource-card">
-                <h4>NCOA</h4>
-                <div>Top 5 Financial Scams Targeting Older Adults</div>
-                <a href="https://www.ncoa.org/article/top-5-financial-scams-targeting-older-adults" target="_blank" rel="noopener">Read Article</a>
-            </div>
-            <div class="resource-card">
-                <h4>FTC</h4>
-                <div>Latest Scam Alerts & Consumer Advice</div>
-                <a href="https://consumer.ftc.gov/features/scam-alerts" target="_blank" rel="noopener">See Alerts</a>
-            </div>
-            <div class="resource-card">
-                <h4>FDIC</h4>
-                <div>Money Smart for Older Adults Toolkit (PDF)</div>
-                <a href="https://www.fdic.gov/resources/consumers/money-smart/older-adults.html" target="_blank" rel="noopener">Download Toolkit</a>
-            </div>
-            <div class="resource-card">
-                <h4>CBA</h4>
-                <div>Fraud Prevention Toolkit for Seniors</div>
-                <a href="https://cba.ca/for-seniors" target="_blank" rel="noopener">View Toolkit</a>
-            </div>
-            <div class="resource-card">
-                <h4>NIA</h4>
-                <div>Beware of Scams Targeting Older Adults</div>
-                <a href="https://www.nia.nih.gov/health/beware-scams-targeting-older-adults" target="_blank" rel="noopener">Read Article</a>
-            </div>
-            <div class="resource-card">
-                <h4>AARP</h4>
-                <div>Fraud Watch Network</div>
-                <a href="https://www.aarp.org/money/scams-fraud/" target="_blank" rel="noopener">Visit AARP</a>
-            </div>
-            <div class="resource-card">
-                <h4>Take Five</h4>
-                <div>Stop Fraud Campaign (UK)</div>
-                <a href="https://takefive-stopfraud.org.uk/" target="_blank" rel="noopener">See Campaign</a>
-            </div>
-        </div>
-        <div style="text-align:center;font-size:0.95rem;color:#888;margin-top:1.5rem;">All resources are free to use and share. Please credit the original source when sharing.</div>
-    </section>
-
-    <section class="carousel fade-in">
-        <div class="carousel-quote" id="carousel-quote">"Silver60 not only connected me with my grandkids, but gave me the confidence to spot scams before they happen."</div>
-        <div class="carousel-author" id="carousel-author">– Margaret S., Florida</div>
-        <div class="carousel-btns">
-            <button class="carousel-btn" onclick="showTestimonial(0)">&lt;</button>
-            <button class="carousel-btn" onclick="showTestimonial(1)">&gt;</button>
+        <div class="testimonial-col">
+            <div class="testimonial-stars">★★★★★</div>
+            <div class="testimonial-quote">Silver60 not only connected me with my grandkids, but gave me the confidence to spot scams before they happen.</div>
+            <div class="testimonial-author">– Margaret S., Florida</div>
         </div>
     </section>
-
+    <section class="newsletter-section" id="newsletter">
+        <form class="newsletter-form">
+            <label for="newsletter-email">Subscribe to our Newsletter</label>
+            <input type="email" id="newsletter-email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+        <div class="contact-info" id="contact">
+            <div><i class="fa-solid fa-envelope"></i> support@silver60.com</div>
+            <div><i class="fa-solid fa-phone"></i> (800) 555-0123</div>
+        </div>
+    </section>
     <footer>
-        &copy; 2025 Silver60. All rights reserved. | <a href="#" style="color:#3f51b5;">Privacy Policy</a> | <a href="#" style="color:#3f51b5;">Contact</a>
+        &copy; 2025 Silver60. All rights reserved. | <a href="#" style="color:#bfc1c2;">Privacy Policy</a> | <a href="#" style="color:#bfc1c2;">Contact</a>
     </footer>
-    <script>
-        // FAQ accordion
-        document.querySelectorAll('.faq-q').forEach(q => {
-            q.addEventListener('click', function() {
-                const item = this.parentElement;
-                item.classList.toggle('open');
-            });
-        });
-
-        // Simple fade-in on scroll
-        document.addEventListener('DOMContentLoaded', function() {
-            const faders = document.querySelectorAll('.fade-in');
-            const appearOptions = { threshold: 0.1 };
-            const appearOnScroll = new IntersectionObserver(function(entries, observer) {
-                entries.forEach(entry => {
-                    if (!entry.isIntersecting) return;
-                    entry.target.classList.add('appear');
-                    observer.unobserve(entry.target);
-                });
-            }, appearOptions);
-            faders.forEach(fader => { appearOnScroll.observe(fader); });
-        });
-
-        // Simple testimonial carousel
-        const testimonials = [
-            { quote: '"Silver60 not only connected me with my grandkids, but gave me the confidence to spot scams before they happen."', author: '– Margaret S., Florida' },
-            { quote: '"The AI assistant is so easy to use. I feel safer online and love the weekly tips!"', author: '– George T., California' },
-            { quote: '"I never thought I\'d enjoy learning about online safety, but Silver60 makes it simple and fun."', author: '– Linda P., New York' }
-        ];
-        let currentTestimonial = 0;
-        function showTestimonial(idx) {
-            currentTestimonial = idx % testimonials.length;
-            if (currentTestimonial < 0) currentTestimonial = testimonials.length - 1;
-            document.getElementById('carousel-quote').textContent = testimonials[currentTestimonial].quote;
-            document.getElementById('carousel-author').textContent = testimonials[currentTestimonial].author;
-        }
-        // Optional: auto-advance every 8 seconds
-        setInterval(() => { showTestimonial((currentTestimonial+1)%testimonials.length); }, 8000);
-    </script>
 </body>
 </html> 
