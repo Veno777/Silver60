@@ -303,6 +303,29 @@
             .testimonial-col { padding-left: 0; }
             .newsletter-section { gap: 1.5rem; }
         }
+        .dropdown { position: relative; }
+        .dropdown-toggle:after { content: ' ▼'; font-size: 0.7em; }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(44,56,126,0.08);
+            border-radius: 8px;
+            min-width: 180px;
+            z-index: 1000;
+            margin-top: 0.5rem;
+        }
+        .dropdown:hover .dropdown-menu { display: block; }
+        .dropdown-menu a {
+            display: block;
+            padding: 0.7rem 1.2rem;
+            color: #111;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        .dropdown-menu a:hover { background: #f0f4f8; color: #0077cc; }
+        .whats-new-label { font-size: 1rem; background: #e5f3ff; border-radius: 8px; padding: 0.2rem 0.7rem; }
     </style>
 </head>
 <body>
@@ -310,14 +333,35 @@
         <a href="index.html" class="logo" style="display:flex;align-items:center;gap:0.7rem;text-decoration:none;">
           <img src="images/silver60-logo1.png" alt="Silver60 Logo" style="height:6rem;max-width:13rem;width:100%;vertical-align:middle;object-fit:contain;">
         </a>
-        <nav>
-            <a href="#features">Features</a>
-            <a href="#blog">Blog</a>
-            <a href="#plus">Silver60 Plus</a>
-            <a href="#newsletter">Newsletter</a>
+        <nav style="display:flex;align-items:center;gap:2rem;">
+            <a href="index.html">Home</a>
+            <div class="dropdown">
+                <a href="#how-it-works" class="dropdown-toggle">How It Works</a>
+                <div class="dropdown-menu">
+                    <a href="#about">About Silver60</a>
+                    <a href="#ai-scam-detector">AI Scam Detector</a>
+                    <a href="#expert-talks">Expert Talks (Q&A)</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#scam-stories" class="dropdown-toggle">Scam Stories</a>
+                <div class="dropdown-menu">
+                    <a href="#real-stories">Real Stories</a>
+                    <a href="#submit-story">Submit Your Story</a>
+                </div>
+            </div>
+            <a href="newsletter.html">Newsletter</a>
+            <div class="dropdown">
+                <a href="#plus" class="dropdown-toggle">Silver60 Plus</a>
+                <div class="dropdown-menu">
+                    <a href="#member-benefits">Member Benefits</a>
+                    <a href="#pricing">Pricing</a>
+                </div>
+            </div>
             <a href="#faq">FAQ</a>
             <a href="#contact">Contact</a>
-            <a href="https://venorths-newsletter.beehiiv.com/subscribe" class="cta-btn" target="_blank" rel="noopener">Join Now</a>
+            <a href="#" class="cta-btn">Join Now</a>
+            <span class="whats-new-label" style="margin-left:1rem;color:#0077cc;font-weight:700;">🔔 What's New</span>
         </nav>
     </header>
     <section class="purpose">
@@ -354,38 +398,38 @@
             <p>Live or recorded sessions with our fraud prevention specialist.</p>
         </div>
     </section>
-    <section class="blog-section" id="blog">
-        <h2>Latest Blog Posts</h2>
+    <section class="blog-section" id="scam-stories">
+        <h2>Latest Scam Stories</h2>
         <div class="blog-grid">
             <div class="blog-card">
-                <img class="blog-thumb" src="images/Screen Shot 2025-05-22 at 12.10.17 PM.png" alt="Phishing Email">
+                <img class="blog-thumb" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80" alt="Phishing Email Scam">
                 <div class="blog-content">
-                    <h4>How to Spot a Phishing Email</h4>
-                    <p>Learn the red flags of phishing emails and how to protect yourself from online scams.</p>
+                    <h4>Placeholder Scam Story 1</h4>
+                    <p>Preview of the first scam story from your Beehiiv newsletter will appear here.</p>
                     <a href="#" class="read-btn">Read More</a>
                 </div>
             </div>
             <div class="blog-card">
-                <img class="blog-thumb" src="images/Screen Shot 2025-05-22 at 12.10.58 PM.png" alt="Phone Scams">
+                <img class="blog-thumb" src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80" alt="Phone Scam">
                 <div class="blog-content">
-                    <h4>Phone Scams Targeting Seniors</h4>
-                    <p>Discover the most common phone scams and what to do if you receive a suspicious call.</p>
+                    <h4>Placeholder Scam Story 2</h4>
+                    <p>Preview of the second scam story from your Beehiiv newsletter will appear here.</p>
                     <a href="#" class="read-btn">Read More</a>
                 </div>
             </div>
             <div class="blog-card">
-                <img class="blog-thumb" src="images/Screen Shot 2025-05-22 at 12.11.16 PM.png" alt="Social Media Scams">
+                <img class="blog-thumb" src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=600&q=80" alt="Social Media Scam">
                 <div class="blog-content">
-                    <h4>Trending: Social Media Scams</h4>
-                    <p>Stay up to date on the latest scams spreading on Facebook and Instagram.</p>
+                    <h4>Placeholder Scam Story 3</h4>
+                    <p>Preview of the third scam story from your Beehiiv newsletter will appear here.</p>
                     <a href="#" class="read-btn">Read More</a>
                 </div>
             </div>
             <div class="blog-card">
-                <img class="blog-thumb" src="images/Screen Shot 2025-04-09 at 5.36.12 PM.png" alt="Protecting Personal Info">
+                <img class="blog-thumb" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Identity Theft Scam">
                 <div class="blog-content">
-                    <h4>Protecting Your Personal Information</h4>
-                    <p>Tips for keeping your personal and financial information safe online.</p>
+                    <h4>Placeholder Scam Story 4</h4>
+                    <p>Preview of the fourth scam story from your Beehiiv newsletter will appear here.</p>
                     <a href="#" class="read-btn">Read More</a>
                 </div>
             </div>
