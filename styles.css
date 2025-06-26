@@ -44,12 +44,19 @@ body {
 
 .main-nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start !important;
     align-items: center;
     padding: 1rem 0;
+    gap: 2rem;
 }
 
 .logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-width: 300px;
+    padding-left: 0;
+    margin-right: 2rem;
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--primary-color);
@@ -71,6 +78,14 @@ body {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
+}
+
+.logo-img {
+    height: 4.875rem !important; /* 3.25rem * 1.5 = 4.875rem */
+    max-width: none !important;
+    width: auto !important;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .nav-links {
