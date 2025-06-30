@@ -356,45 +356,92 @@
     </section>
     <section class="blog-section" id="scam-stories">
         <h2>Latest Scam Stories</h2>
-        <div class="blog-grid">
-            <div class="blog-card">
-                <img class="blog-thumb" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80" alt="Phishing Email Scam">
-                <div class="blog-content">
-                    <h4>Phishing Email Scam</h4>
-                    <div style="font-weight:600;">Placeholder Scam Story 1</div>
-                    <p>Preview of the first scam story from your Beehiiv newsletter will appear here.</p>
-                    <a href="#" class="read-btn">Read More</a>
-                </div>
-            </div>
-            <div class="blog-card">
-                <img class="blog-thumb" src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80" alt="Phone Scam">
-                <div class="blog-content">
-                    <h4>Phone Scam</h4>
-                    <div style="font-weight:600;">Placeholder Scam Story 2</div>
-                    <p>Preview of the second scam story from your Beehiiv newsletter will appear here.</p>
-                    <a href="#" class="read-btn">Read More</a>
-                </div>
-            </div>
-            <div class="blog-card">
-                <img class="blog-thumb" src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=600&q=80" alt="Social Media Scam">
-                <div class="blog-content">
-                    <h4>Social Media Scam</h4>
-                    <div style="font-weight:600;">Placeholder Scam Story 3</div>
-                    <p>Preview of the third scam story from your Beehiiv newsletter will appear here.</p>
-                    <a href="#" class="read-btn">Read More</a>
-                </div>
-            </div>
-            <div class="blog-card">
-                <img class="blog-thumb" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Identity Theft Scam">
-                <div class="blog-content">
-                    <h4>Identity Theft Scam</h4>
-                    <div style="font-weight:600;">Placeholder Scam Story 4</div>
-                    <p>Preview of the fourth scam story from your Beehiiv newsletter will appear here.</p>
-                    <a href="#" class="read-btn">Read More</a>
-                </div>
-            </div>
+        <div id="stories-container" class="blog-grid">
+            <!-- Stories will be loaded here dynamically -->
         </div>
     </section>
+
+    <!-- Signup Modal -->
+    <div id="signup-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:9999; align-items:center; justify-content:center;">
+        <div style="background:white; padding:2rem; border-radius:8px; max-width:400px; text-align:center; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+            <h3 style="color:#0077cc;">Sign up to read the full story</h3>
+            <p>Silver60 protects you with real scam stories, tips, and tools every week.</p>
+            <a href="https://silver60.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer" style="display:inline-block; margin:15px 0; background:#0077cc; color:white; padding:10px 20px; text-decoration:none; border-radius:5px; font-weight:bold;">Sign Up for the Newsletter</a>
+            <br/>
+            <button onclick="markAsSignedUp()" style="background:#28a745; color:white; border:none; padding:10px 15px; border-radius:5px; cursor:pointer; font-weight:bold; margin-bottom:10px;">I've Signed Up!</button>
+            <br/>
+            <button onclick="closeModal()" style="background:none; border:none; color:#555; cursor:pointer; font-size:0.9rem;">Close</button>
+        </div>
+    </div>
+
+    <script>
+        const stories = [
+            {
+                title: "I Thought It Was My Package – Until My Credit Card Was Drained",
+                link: "https://silver60.beehiiv.com/p/i-thought-it-was-my-package-until-my-credit-card-was-drained",
+                preview: "A delivery scam disguised as a tracking message led to real charges. Here's how it happened…",
+                image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                title: "Fake Refund, Real Loss",
+                link: "https://silver60.beehiiv.com/p/fake-refund-real-loss",
+                preview: "They said I was getting money back. Instead, I lost it all.",
+                image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                title: "Selling Online? Watch Out for This Dangerous E-Transfer Scam",
+                link: "https://silver60.beehiiv.com/p/selling-online-watch-out-for-this-dangerous-e-transfer-scam",
+                preview: "Facebook Marketplace, e-Transfers, and a buyer too eager to pay. A perfect storm.",
+                image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=600&q=80"
+            }
+        ];
+
+        function renderStories() {
+            const container = document.getElementById('stories-container');
+            container.innerHTML = '';
+            stories.forEach(story => {
+                const storyCard = document.createElement('div');
+                storyCard.className = 'blog-card';
+                storyCard.innerHTML = `
+                    <img class="blog-thumb" src="${story.image}" alt="${story.title}">
+                    <div class="blog-content">
+                        <h4>${story.title}</h4>
+                        <p>${story.preview}</p>
+                        <button onclick="handleReadMore('${story.link}')" class="read-btn">Read More</button>
+                    </div>
+                `;
+                container.appendChild(storyCard);
+            });
+        }
+
+        function handleReadMore(link) {
+            const hasSignedUp = localStorage.getItem('silver60_signed_up');
+            if (hasSignedUp) {
+                window.open(link, '_blank');
+            } else {
+                showModal();
+            }
+        }
+
+        function showModal() {
+            const modal = document.getElementById('signup-modal');
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('signup-modal');
+            modal.style.display = 'none';
+        }
+
+        function markAsSignedUp() {
+            localStorage.setItem('silver60_signed_up', 'true');
+            closeModal();
+            alert("Thanks for signing up! You can now view full stories by clicking 'Read More'.");
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', renderStories);
+    </script>
     <section class="plus-testimonial" id="plus" style="display:block;background:#fff;border-radius:24px;box-shadow:0 2px 12px rgba(44,56,126,0.06);padding:2.5rem 1.5rem;margin:2rem auto;max-width:700px;">
       <h2 style="font-size:2.2rem;font-weight:800;color:#0077cc;text-align:center;margin-bottom:0.5rem;">🥈 Silver60+ Membership</h2>
       <p style="text-align:center;font-size:1.2rem;color:#555555;margin-bottom:1.2rem;">
