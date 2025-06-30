@@ -442,53 +442,152 @@
         // Initialize on page load
         document.addEventListener('DOMContentLoaded', renderStories);
     </script>
-    <section class="plus-testimonial" id="plus" style="display:block;background:#fff;border-radius:24px;box-shadow:0 2px 12px rgba(44,56,126,0.06);padding:2.5rem 1.5rem;margin:2rem auto;max-width:700px;">
+    <section class="plus-testimonial" id="plus" style="display:block;background:#fff;border-radius:24px;box-shadow:0 2px 12px rgba(44,56,126,0.06);padding:2.5rem 1.5rem;margin:2rem auto;max-width:900px;">
       <h2 style="font-size:2.2rem;font-weight:800;color:#0077cc;text-align:center;margin-bottom:0.5rem;">🥈 Silver60+ Membership</h2>
-      <p style="text-align:center;font-size:1.2rem;color:#555555;margin-bottom:1.2rem;">
-        <span style="font-size:1.5rem;font-weight:700;color:#0077cc;">$9.99/month</span> or <span style="font-size:1.5rem;font-weight:700;color:#0077cc;">$99.99/year</span><br>
-        <span style="color:#0077cc;">$7.99/month or $79.99/year for ages 60+</span>
-      </p>
-      <div style="background:#f8fafc;border-radius:16px;padding:2rem 1.5rem;margin-bottom:2rem;box-shadow:0 2px 8px rgba(44,56,126,0.04);">
-        <ul style="list-style:none;padding:0;margin:0;">
-          <li style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.2rem;">
-            <span style="color:#22c55e;font-size:2rem;"><i class="fa-solid fa-circle-check"></i></span>
-            <div><span style="font-weight:700;color:#0077cc;">Exclusive Access to Our Scam-Protection AI, "Silver"</span><br><span style="color:#555555;">Your personal fraud-fighting assistant — trained on the latest scams and always ready to help.</span></div>
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.2rem;">
-            <span style="color:#2563eb;font-size:2rem;"><i class="fa-solid fa-clock"></i></span>
-            <div><span style="font-weight:700;color:#0077cc;">Monthly Expert-Led Masterclass</span><br><span style="color:#555555;">Live on Zoom with professionals from banking, healthcare, insurance, telecom, and law. Ask questions in a friendly, senior-focused classroom setting.</span></div>
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.2rem;">
-            <span style="color:#eab308;font-size:2rem;"><i class="fa-solid fa-pen-to-square"></i></span>
-            <div><span style="font-weight:700;color:#0077cc;">Members-Only Story Submissions</span><br><span style="color:#555555;">Get your scam story featured and help others learn — only for Plus members.</span></div>
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.2rem;">
-            <span style="color:#a21caf;font-size:2rem;"><i class="fa-solid fa-magnifying-glass-check"></i></span>
-            <div><span style="font-weight:700;color:#0077cc;">Personalized Scam Alerts</span><br><span style="color:#555555;">Location- and age-based alerts for trending scams — phone, email, Medicare, CRA, and more.</span></div>
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.2rem;">
-            <span style="color:#ef4444;font-size:2rem;"><i class="fa-solid fa-envelope-circle-check"></i></span>
-            <div><span style="font-weight:700;color:#0077cc;">SilverScan – Instant Scam Email Check</span><br><span style="color:#555555;">Forward emails to <strong>scan@silver60.com</strong> for automated AI-powered safety reports in your inbox.</span></div>
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.2rem;">
-            <span style="color:#06b6d4;font-size:2rem;"><i class="fa-solid fa-robot"></i></span>
-            <div><span style="font-weight:700;color:#0077cc;">24/7 Chat Support with Silver</span><br><span style="color:#555555;">Ask Silver anything anytime — from "Is this a scam?" to "What should I do next?"</span></div>
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.2rem;">
-            <span style="color:#ec4899;font-size:2rem;"><i class="fa-solid fa-envelope"></i></span>
-            <div><span style="font-weight:700;color:#0077cc;">Priority Email Support</span><br><span style="color:#555555;">Get direct responses from our expert team when time matters most.</span></div>
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.2rem;">
-            <span style="color:#6366f1;font-size:2rem;"><i class="fa-solid fa-book-open"></i></span>
-            <div><span style="font-weight:700;color:#0077cc;">Full Access to the Scam Library & Weekly Updates</span><br><span style="color:#555555;">Unlock every past story, professional case study, and fraud analysis report — updated weekly.</span></div>
-          </li>
-        </ul>
-        <div style="text-align:center;margin-top:2.5rem;">
-          <a href="#" class="cta-btn" style="background:#0077cc;color:#fff;font-size:1.2rem;padding:1rem 2.2rem;border-radius:24px;font-weight:700;box-shadow:0 2px 8px #0077cc33;">Start Your Free Trial</a>
-          <div style="font-size:0.95rem;color:#555555;margin-top:0.7rem;">Cancel anytime. 14-day money-back guarantee.</div>
+      <p style="text-align:center;font-size:1.2rem;color:#555555;margin-bottom:1.2rem;">Protection, support, and peace of mind — for those who need it most.</p>
+      
+      <!-- Monthly/Yearly Toggle -->
+      <div style="display:flex;justify-content:center;align-items:center;gap:1rem;margin-bottom:2rem;font-size:1rem;color:#555555;">
+        <span id="monthly-text" style="font-weight:bold;">Monthly</span>
+        <label style="position:relative;display:inline-flex;align-items:center;cursor:pointer;">
+          <input type="checkbox" id="yearly-toggle" style="display:none;">
+          <div id="toggle-bg" style="width:44px;height:24px;background:#ccc;border-radius:12px;transition:background 0.3s;"></div>
+          <span id="toggle-slider" style="position:absolute;left:2px;top:2px;background:white;width:20px;height:20px;border-radius:50%;transition:transform 0.3s;"></span>
+        </label>
+        <span id="yearly-text" style="opacity:0.6;">Yearly</span>
+      </div>
+
+      <!-- Pricing Plans -->
+      <div style="display:flex;gap:2rem;flex-wrap:wrap;margin-bottom:2rem;">
+        <!-- Standard Plan (Crossed Out) -->
+        <div style="flex:1;min-width:300px;border:2px solid #ccc;padding:1.5rem;border-radius:16px;background:#f8f8f8;">
+          <h3 style="color:#888;font-size:1.3rem;font-weight:700;margin-bottom:1rem;">Standard Plan</h3>
+          <div style="font-size:2.5rem;font-weight:bold;color:#ccc;text-decoration:line-through;margin-bottom:0.5rem;">$29.99/mo</div>
+          <p style="color:#666;font-size:0.9rem;margin-bottom:1.5rem;">Originally priced for those who want full protection — but we have something better.</p>
+          <button style="background:#ccc;color:#888;border:none;padding:0.8rem 1.5rem;border-radius:8px;font-weight:600;cursor:not-allowed;width:100%;">Not Recommended</button>
+        </div>
+
+        <!-- Victim Support Plan (Recommended) -->
+        <div style="flex:1;min-width:300px;border:2px solid #28a745;padding:1.5rem;border-radius:16px;background:#f0fff5;box-shadow:0 4px 12px rgba(40,167,69,0.1);">
+          <h3 style="color:#28a745;font-size:1.3rem;font-weight:700;margin-bottom:1rem;">Victim Support Plan</h3>
+          <div id="price-display" style="font-size:2.5rem;font-weight:bold;color:#28a745;margin-bottom:0.5rem;">$14.99/mo</div>
+          <div id="savings-text" style="display:none;color:#28a745;font-size:0.9rem;font-weight:600;margin-bottom:0.5rem;">Save 17% when billed yearly!</div>
+          <p style="color:#444;font-size:0.9rem;margin-bottom:0.5rem;">If you've ever been affected by a scam — even once — this plan is for you.</p>
+          <p style="color:#666;font-size:0.8rem;margin-bottom:1.5rem;">We don't check. If you've been targeted, tricked, or just want peace of mind — you're welcome here.</p>
+          <button id="join-button" style="background:#28a745;color:white;border:none;padding:0.8rem 1.5rem;border-radius:8px;font-weight:600;cursor:pointer;width:100%;transition:background 0.3s;" onmouseover="this.style.background='#218838'" onmouseout="this.style.background='#28a745'">Join at $14.99/mo</button>
         </div>
       </div>
+
+      <!-- Below Pricing Message -->
+      <p style="text-align:center;font-size:0.9rem;color:#666;margin-bottom:2rem;">🎯 Even if you haven't been scammed — if you care for someone who has, or want to stay protected — this plan is for you.</p>
+
+      <!-- What's Included Section -->
+      <div style="background:#f8fafc;border-radius:16px;padding:2rem 1.5rem;margin-bottom:2rem;box-shadow:0 2px 8px rgba(44,56,126,0.04);">
+        <h3 style="color:#0077cc;font-size:1.5rem;font-weight:700;text-align:center;margin-bottom:1.5rem;">✅ What's Included:</h3>
+        <ul style="list-style:none;padding:0;margin:0;">
+          <li style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.2rem;">
+            <span style="color:#22c55e;font-size:1.5rem;">🛡️</span>
+            <div><span style="font-weight:700;color:#0077cc;">Meet "Silvia" — Your Scam-Fighting AI Assistant</span><br><span style="color:#555555;">Trained on the newest scams. Ready 24/7 to help you ask, "Is this a scam?" and know exactly what to do next.</span></div>
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.2rem;">
+            <span style="color:#2563eb;font-size:1.5rem;">🎓</span>
+            <div><span style="font-weight:700;color:#0077cc;">Monthly Masterclass with Real Experts</span><br><span style="color:#555555;">Live Zoom sessions with professionals in banking, law, healthcare, and telecom. Learn how scammers really operate — and how to stop them.</span></div>
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.2rem;">
+            <span style="color:#eab308;font-size:1.5rem;">📣</span>
+            <div><span style="font-weight:700;color:#0077cc;">Members-Only Story Sharing</span><br><span style="color:#555555;">Submit your scam story to help others — Plus members only. Your experience could save someone else.</span></div>
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.2rem;">
+            <span style="color:#a21caf;font-size:1.5rem;">🚨</span>
+            <div><span style="font-weight:700;color:#0077cc;">Personalized Scam Alerts</span><br><span style="color:#555555;">Get alerts tailored to your age and location — including phone, email, Medicare, CRA, and tech support scams.</span></div>
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.2rem;">
+            <span style="color:#ef4444;font-size:1.5rem;">📥</span>
+            <div><span style="font-weight:700;color:#0077cc;">SilverScan – Instant Email Checkup</span><br><span style="color:#555555;">Forward suspicious emails to <strong>scan@silver60.com</strong> and get a fast, AI-powered safety report.</span></div>
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.2rem;">
+            <span style="color:#06b6d4;font-size:1.5rem;">💬</span>
+            <div><span style="font-weight:700;color:#0077cc;">24/7 Chat with Silver</span><br><span style="color:#555555;">Ask questions anytime — even at 2 AM. "Silver" is always there to help.</span></div>
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.2rem;">
+            <span style="color:#ec4899;font-size:1.5rem;">📧</span>
+            <div><span style="font-weight:700;color:#0077cc;">Priority Support When It Counts</span><br><span style="color:#555555;">Need human help? Get fast, direct responses from our fraud prevention team.</span></div>
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.2rem;">
+            <span style="color:#6366f1;font-size:1.5rem;">📚</span>
+            <div><span style="font-weight:700;color:#0077cc;">Unlimited Access to the Scam Library</span><br><span style="color:#555555;">Every past article, breakdown, and fraud report — fully unlocked and updated weekly.</span></div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Why Join Section -->
+      <div style="background:#e5f3ff;border-radius:16px;padding:1.5rem;margin-bottom:2rem;text-align:center;">
+        <h3 style="color:#0077cc;font-size:1.3rem;font-weight:700;margin-bottom:1rem;">❤️ Why Join Silver60+?</h3>
+        <p style="color:#555555;font-size:1.1rem;margin-bottom:0;">You're not just getting a tool — you're getting a trusted partner.<br>We make it easy to stay ahead, avoid costly mistakes, and feel confident again.</p>
+      </div>
+
+      <!-- Testimonial -->
+      <div style="background:white;padding:1.5rem;border:1px solid #e5e7eb;border-radius:16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);max-width:600px;margin:0 auto 2rem auto;">
+        <p style="font-size:1.1rem;color:#374151;font-style:italic;margin-bottom:1rem;">"I almost lost $3,000 to a phone scam. Silver60 didn't just help me recover — they taught me how to spot it next time."</p>
+        <p style="font-size:0.9rem;color:#6b7280;font-weight:600;">– Lauren H., 67, California</p>
+      </div>
+
+      <!-- Trust Badge -->
+      <div style="text-align:center;margin-bottom:2rem;">
+        <div style="display:inline-block;background:#f8fafc;padding:1rem 2rem;border-radius:12px;border:2px solid #e5e7eb;">
+          <span style="color:#0077cc;font-size:1.2rem;font-weight:700;">🛡️ Trusted by Seniors</span>
+        </div>
+      </div>
+
+      <!-- CTA Section -->
+      <div style="text-align:center;">
+        <button id="cta-button" style="background:#0077cc;color:#fff;font-size:1.3rem;padding:1rem 2.5rem;border-radius:24px;font-weight:700;border:none;cursor:pointer;box-shadow:0 4px 12px rgba(0,119,204,0.3);transition:all 0.3s;" onmouseover="this.style.background='#005fa3';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#0077cc';this.style.transform='translateY(0)'">Start Your Free Trial</button>
+        <div style="font-size:0.95rem;color:#666;margin-top:0.7rem;">Cancel anytime. 14-day money-back guarantee.</div>
+      </div>
     </section>
+
+    <script>
+      // Monthly/Yearly Toggle Functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const yearlyToggle = document.getElementById('yearly-toggle');
+        const monthlyText = document.getElementById('monthly-text');
+        const yearlyText = document.getElementById('yearly-text');
+        const toggleBg = document.getElementById('toggle-bg');
+        const toggleSlider = document.getElementById('toggle-slider');
+        const priceDisplay = document.getElementById('price-display');
+        const savingsText = document.getElementById('savings-text');
+        const joinButton = document.getElementById('join-button');
+        const ctaButton = document.getElementById('cta-button');
+
+        yearlyToggle.addEventListener('change', function() {
+          if (this.checked) {
+            // Yearly selected
+            toggleBg.style.background = '#28a745';
+            toggleSlider.style.transform = 'translateX(20px)';
+            monthlyText.style.opacity = '0.6';
+            monthlyText.style.fontWeight = 'normal';
+            yearlyText.style.opacity = '1';
+            yearlyText.style.fontWeight = 'bold';
+            priceDisplay.textContent = '$149/year';
+            savingsText.style.display = 'block';
+            joinButton.textContent = 'Join at $149/year';
+            ctaButton.textContent = 'Start Your Free Trial';
+          } else {
+            // Monthly selected
+            toggleBg.style.background = '#ccc';
+            toggleSlider.style.transform = 'translateX(0)';
+            monthlyText.style.opacity = '1';
+            monthlyText.style.fontWeight = 'bold';
+            yearlyText.style.opacity = '0.6';
+            yearlyText.style.fontWeight = 'normal';
+            priceDisplay.textContent = '$14.99/mo';
+            savingsText.style.display = 'none';
+            joinButton.textContent = 'Join at $14.99/mo';
+            ctaButton.textContent = 'Start Your Free Trial';
+          }
+        });
+      });
+    </script>
     <section class="newsletter-section" id="newsletter">
         <form class="newsletter-form">
             <label for="newsletter-email">Subscribe to our Newsletter</label>
