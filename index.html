@@ -325,34 +325,100 @@
         }
         .dropdown-menu a:hover { background: #f0f4f8; color: #0077cc; }
         .whats-new-label { font-size: 1rem; background: #e5f3ff; border-radius: 8px; padding: 0.2rem 0.7rem; }
+        .testimonial-form-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        .form-box, .testimonial-box {
+            flex: 1 1 300px;
+            max-width: 500px;
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        .form-box form input,
+        .form-box form textarea {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        .form-box form button {
+            background-color: #2563eb;
+            color: white;
+            font-weight: bold;
+            border: none;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .form-box form button:hover {
+            background-color: #1e40af;
+        }
+        .testimonial-img img {
+            width: 200px;
+            height: 232px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+        }
+        .nav-buttons, .dots {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ccc;
+            cursor: pointer;
+        }
+        .dot.active { background: #2563eb; }
+        @media (max-width: 900px) {
+            .testimonial-form-wrapper { flex-direction: column; align-items: center; }
+            .form-box, .testimonial-box { max-width: 100%; }
+        }
     </style>
 </head>
 <body>
-    <header>
-        <img src="images/logoss.png" alt="Silver60 Logo" style="height:4.41rem;max-width:14rem;width:auto;vertical-align:middle;object-fit:contain;margin-right:1.2rem;">
-        <nav style="display:flex;align-items:center;gap:2rem;">
-            <a href="#how-it-works" style="font-weight:900;color:#111;">How It Works</a>
-            <a href="#scam-stories" style="font-weight:900;color:#111;">Real Scam Stories</a>
-            <a href="newsletter.html" style="font-weight:900;color:#111;">Free Newsletter</a>
-            <a href="#plus" style="font-weight:900;color:#111;">Silver60+ Membership</a>
-            <a href="#faq" style="font-weight:900;color:#111;">Help & FAQs</a>
-            <a href="#contact" style="font-weight:900;color:#111;">Contact Us</a>
-            <a href="#" class="cta-btn">Join Now</a>
-        </nav>
-    </header>
-    <section class="purpose">
-        <img src="https://img.icons8.com/ios-filled/50/0077cc/security-checked.png" alt="Shield Icon" style="height:2.2rem;vertical-align:middle;margin-right:0.7rem;">
-        <span style="font-weight: 900; color: #111; font-size: 1.5rem; letter-spacing: 0.5px;">
-            Trusted Scam Protection for Seniors — Simple, Safe, Silver60
-        </span>
-    </section>
-    <section class="hero" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:2.5rem;padding:3rem 1.5rem 2rem 1.5rem;background:var(--white);border-radius:32px;max-width:1200px;margin:2rem auto 2rem auto;box-shadow:0 2px 12px rgba(44,56,126,0.04);">
-      <div class="hero-text" style="max-width:540px;">
-        <h1 style="font-size:2.5rem;color:#0077cc;font-weight:800;margin-bottom:1.2rem;">🔒 Seniors Are Being Scammed Every Day. We're Here to Stop It.</h1>
-        <p style="font-size:1.2rem;color:#555555;margin-bottom:2rem;">Banks can't always protect you — but Silver60 can.<br>Get real-time scam protection, expert fraud alerts, and on-demand support from Silvia.<br>Join the growing movement keeping seniors safe across North America.</p>
-        <a href="#" class="cta-btn" style="background:#0077cc;color:#fff;font-size:1.1rem;padding:0.9rem 2.2rem;border-radius:12px;font-weight:700;margin-bottom:1.2rem;display:inline-block;">Start My Protection Now</a>
+    <header style="background: #fff; box-shadow: 0 2px 12px rgba(44,56,126,0.06); padding: 0.5rem 2.5rem; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100;">
+      <div style="display: flex; align-items: center; gap: 1.2rem;">
+        <img src="images/silver60newlogo.png" alt="Silver60 Logo" style="height:3.5rem; width:auto; object-fit:contain; margin-right:0.7rem;">
+        <span style="font-size:2rem; font-weight:800; color:#0077cc; letter-spacing:1px;">Silver60</span>
       </div>
-      <video class="hero-img" src="images/FullSizeRender.mp4" style="max-width:350px;width:100%;border-radius:24px;background:var(--silver);box-shadow:0 6px 20px rgba(44,56,126,0.10);object-fit:contain;" controls></video>
+      <nav style="display: flex; align-items: center; gap: 2rem;">
+        <a href="#how-it-works" style="font-weight:700; color:#111; text-decoration:none;">How It Works</a>
+        <a href="#scam-stories" style="font-weight:700; color:#111; text-decoration:none;">Scam Stories</a>
+        <a href="newsletter.html" style="font-weight:700; color:#111; text-decoration:none;">Newsletter</a>
+        <a href="#plus" style="font-weight:700; color:#111; text-decoration:none;">Membership</a>
+        <a href="#faq" style="font-weight:700; color:#111; text-decoration:none;">FAQs</a>
+        <a href="#contact" style="font-weight:700; color:#111; text-decoration:none;">Contact</a>
+        <a href="#join" class="cta-btn" style="background:#0077cc; color:#fff; padding:0.7rem 1.7rem; border-radius:12px; font-weight:700; font-size:1.1rem; margin-left:1.5rem; text-decoration:none; transition:background 0.3s;">Join Silver60+</a>
+      </nav>
+    </header>
+    <section class="hero" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:2.5rem; padding:3.5rem 1.5rem 2.5rem 1.5rem; background:var(--white); border-radius:32px; max-width:1200px; margin:2rem auto 2rem auto; box-shadow:0 2px 12px rgba(44,56,126,0.04);">
+      <div class="hero-text" style="max-width:540px;">
+        <div style="display:flex; align-items:center; gap:0.7rem; margin-bottom:1.2rem;">
+          <img src="https://img.icons8.com/ios-filled/50/0077cc/security-checked.png" alt="Shield Icon" style="height:2.2rem;">
+          <span style="font-weight:900; color:#0077cc; font-size:1.3rem; letter-spacing:0.5px;">Trusted Scam Protection for Seniors</span>
+        </div>
+        <h1 style="font-size:2.5rem; color:#0077cc; font-weight:800; margin-bottom:1.2rem;">Scam-Proof Your Golden Years</h1>
+        <p style="font-size:1.2rem; color:#555555; margin-bottom:2rem;">Silver60 keeps you safe from scams, fraud, and online threats. Get real stories, expert alerts, and on-demand support. Join the movement keeping seniors safe across North America.</p>
+        <div style="display:flex; gap:1.2rem; flex-wrap:wrap;">
+          <a href="newsletter.html" class="cta-btn" style="background:#2563eb; color:#fff; font-size:1.1rem; padding:0.9rem 2.2rem; border-radius:12px; font-weight:700; text-decoration:none;">Get the Free Newsletter</a>
+          <a href="#scam-stories" class="cta-btn" style="background:#bfc1c2; color:#0077cc; font-size:1.1rem; padding:0.9rem 2.2rem; border-radius:12px; font-weight:700; text-decoration:none;">Browse Scam Stories</a>
+        </div>
+      </div>
+      <img class="hero-img" src="images/silver60newlogo.png" alt="Silver60 Shield" style="max-width:350px; width:100%; border-radius:24px; background:var(--silver); box-shadow:0 6px 20px rgba(44,56,126,0.10); object-fit:contain;">
     </section>
     <section class="blog-section" id="scam-stories">
         <h2 style="color:#ffffff;">Latest Scam Stories</h2>
@@ -631,50 +697,51 @@
     </section>
     <section id="why-trust" style="background:#f8fafc;padding:3rem 1.5rem 2.5rem 1.5rem;border-radius:32px;max-width:1200px;margin:2rem auto;box-shadow:0 2px 12px rgba(44,56,126,0.04);">
       <h2 style="text-align:center; color:#111; margin-top:3rem;">🙋 Why Trust Silver60?</h2>
-      <div class="testimonial-box" id="testimonial" style="max-width:600px;margin:auto;border:1px solid #ccc;border-radius:20px;padding:1.5rem;background:#f8fafc;box-shadow:0 2px 6px rgba(0,0,0,0.1);text-align:center;">
-        <div class="testimonial-img" style="width:100%;height:200px;border-radius:1rem;background:#2563eb;overflow:hidden;">
-          <img id="testimonial-img" src="images/Mike.S.jpg" alt="testimonial" style="width:100%;height:100%;object-fit:cover;">
+      <div class="testimonial-form-wrapper">
+        <!-- FORM SECTION -->
+        <div class="form-box">
+          <h3>Share Your Silver60 Story</h3>
+          <form id="testimonial-form" action="https://formsubmit.co/the21bitcoin@hotmail.com" method="POST">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_subject" value="New Silver60 Testimonial Submission">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="text" name="age" placeholder="Your Age (Optional)" />
+            <textarea name="message" placeholder="Your Scam Story..." rows="5" required></textarea>
+            <button type="submit">Submit Testimonial</button>
+          </form>
+          <p id="thanks-msg" class="hidden" style="color: green; text-align: center;">Thank you! Your story has been submitted.</p>
         </div>
-        <p id="testimonial-quote" style="margin:1.2rem 0 0.5rem 0;"><em>“I know a lot about fishing, but not so much about phishing. Thanks to Silver60, I didn't click that fake email.”</em></p>
-        <p id="testimonial-name" style="color:#222;font-weight:bold;">– Mike S., 72, Fishing Enthusiast</p>
-      </div>
-      <div class="nav-buttons" style="display:flex;justify-content:center;gap:1rem;margin-top:1rem;">
-        <button onclick="prevTestimonial()" style="background:#2563eb;color:white;border:none;padding:0.5rem 1.2rem;border-radius:8px;font-size:1.2rem;cursor:pointer;">←</button>
-        <button onclick="nextTestimonial()" style="background:#2563eb;color:white;border:none;padding:0.5rem 1.2rem;border-radius:8px;font-size:1.2rem;cursor:pointer;">→</button>
-      </div>
-      <div class="dots" id="testimonial-dots" style="display:flex;justify-content:center;gap:1rem;margin-top:1rem;"></div>
-      <p style="text-align:center; max-width:600px; margin: 2rem auto; color: #444;">
-        🛡️ Silver60 is built for safety. No open chats, no strangers — just real experts, real protection, and real results.
-      </p>
-      <div class="form-container" style="max-width:600px;margin:3rem auto;border:1px solid #ccc;border-radius:20px;padding:1.5rem;background:#f8fafc;box-shadow:0 2px 6px rgba(0,0,0,0.1);">
-        <h3 style="text-align:center;color:#111;">Share Your Silver60 Story</h3>
-        <form id="testimonial-form" action="https://formsubmit.co/the21bitcoin@hotmail.com" method="POST">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_subject" value="New Silver60 Testimonial Submission">
-          <input type="text" name="name" placeholder="Your Name" required style="width:100%;padding:0.75rem;margin-bottom:1rem;border:1px solid #ccc;border-radius:8px;font-size:1rem;" />
-          <input type="text" name="age" placeholder="Your Age (Optional)" style="width:100%;padding:0.75rem;margin-bottom:1rem;border:1px solid #ccc;border-radius:8px;font-size:1rem;" />
-          <textarea name="message" placeholder="Your Scam Story..." rows="5" required style="width:100%;padding:0.75rem;margin-bottom:1rem;border:1px solid #ccc;border-radius:8px;font-size:1rem;"></textarea>
-          <button type="submit" style="width:100%;background-color:#2563eb;color:white;font-weight:bold;padding:0.75rem;border:none;border-radius:8px;font-size:1rem;cursor:pointer;">Submit Testimonial</button>
-        </form>
-        <p id="thanks-msg" class="hidden" style="color: green; text-align: center;">Thank you! Your story has been submitted.</p>
+        <!-- TESTIMONIAL SECTION -->
+        <div class="testimonial-box" id="testimonial">
+          <div class="testimonial-img">
+            <img id="testimonial-img" src="images/Mike.S_200x231.jpg" alt="testimonial">
+          </div>
+          <p id="testimonial-quote"><em>“I know a lot about fishing, but not so much about phishing. Thanks to Silver60, I didn't click that fake email.”</em></p>
+          <p id="testimonial-name"><strong>– Mike S., 72, Fishing Enthusiast</strong></p>
+          <div class="nav-buttons">
+            <button onclick="prevTestimonial()">←</button>
+            <button onclick="nextTestimonial()">→</button>
+          </div>
+          <div class="dots" id="testimonial-dots"></div>
+        </div>
       </div>
       <script>
         const testimonials = [
           {
             name: "Mike S.", age: 72, title: "Fishing Enthusiast",
             quote: "I know a lot about fishing, but not so much about phishing. Thanks to Silver60, I didn't click that fake email.",
-            image: "images/Mike.S.jpg"
+            image: "images/Mike.S_200x231.jpg"
           },
           {
             name: "Brenda L.", age: 66, title: "Retired Teacher",
             quote: "A scammer told me my daughter was in trouble. Silvia walked me through it and saved me from sending $2,000.",
-            image: "images/Brenda L.jpg"
+            image: "images/Brenda_L_200x231.jpg"
           },
           {
             name: "George T.", age: 75, title: "Veteran & Grandfather",
             quote: "I got a pop-up saying my computer was infected. Silvia said it was fake. That alone was worth the membership.",
-            image: "images/George T.png"
+            image: "images/George_T_optimized.png"
           }
         ];
         let current = 0;
@@ -682,7 +749,7 @@
           const t = testimonials[current];
           document.getElementById('testimonial-img').src = t.image;
           document.getElementById('testimonial-quote').innerHTML = `“${t.quote}”`;
-          document.getElementById('testimonial-name').innerText = `– ${t.name}, ${t.age}, ${t.title}`;
+          document.getElementById('testimonial-name').innerHTML = `<strong>– ${t.name}, ${t.age}, ${t.title}</strong>`;
           document.querySelectorAll('.dot').forEach((dot, i) => {
             dot.classList.toggle('active', i === current);
           });
@@ -699,11 +766,6 @@
         testimonials.forEach((_, i) => {
           const dot = document.createElement('div');
           dot.classList.add('dot');
-          dot.style.width = '12px';
-          dot.style.height = '12px';
-          dot.style.borderRadius = '50%';
-          dot.style.background = '#ccc';
-          dot.style.cursor = 'pointer';
           dot.addEventListener('click', () => {
             current = i;
             updateTestimonial();
