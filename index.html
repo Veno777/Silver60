@@ -86,31 +86,25 @@
         }
         .purpose img { height: 2.2rem; vertical-align: middle; }
         .hero {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            gap: 2.5rem;
-            padding: 3rem 1.5rem 2rem 1.5rem;
-            background: var(--white);
-            border-radius: 32px;
-            max-width: 1200px;
-            margin: 2rem auto 2rem auto;
-            box-shadow: 0 2px 12px rgba(44,56,126,0.04);
+            background: #f9fafb;
+            border-top: 1px solid #bfc1c2;
+            padding: 3rem 1.5rem;
+            text-align: center;
         }
         .hero-text { max-width: 540px; }
         .hero-text h1 {
-            font-size: 2.5rem;
-            color: var(--blue);
+            font-size: 2rem;
+            color: #0077cc;
             font-weight: 800;
-            margin-bottom: 1.2rem;
+            margin: 0;
         }
         .hero-text p {
             font-size: 1.2rem;
-            color: #444;
-            margin-bottom: 2rem;
+            color: #555555;
+            margin: 0 auto 2rem auto;
+            max-width: 600px;
         }
-        .hero .cta-btn { font-size: 1.2rem; padding: 1rem 2.2rem; margin: 0; }
+        .hero .cta-btn { font-size: 1.1rem; padding: 0.9rem 2.2rem; border-radius: 12px; font-weight: 700; text-decoration: none; transition: background 0.3s; }
         .hero-img {
             max-width: 350px;
             width: 100%;
@@ -390,17 +384,20 @@
     </style>
 </head>
 <body>
-    <header>
-        <img src="images/logoss.png" alt="Silver60 Logo" style="height:4.41rem;max-width:14rem;width:auto;vertical-align:middle;object-fit:contain;margin-right:1.2rem;">
-        <nav style="display:flex;align-items:center;gap:2rem;">
-            <a href="#how-it-works" style="font-weight:900;color:#111;">How It Works</a>
-            <a href="#scam-stories" style="font-weight:900;color:#111;">Real Scam Stories</a>
-            <a href="newsletter.html" style="font-weight:900;color:#111;">Free Newsletter</a>
-            <a href="#plus" style="font-weight:900;color:#111;">Silver60+ Membership</a>
-            <a href="#faq" style="font-weight:900;color:#111;">Help & FAQs</a>
-            <a href="#contact" style="font-weight:900;color:#111;">Contact Us</a>
-            <a href="#" class="cta-btn">Join Now</a>
-        </nav>
+    <header style="background: #fff; box-shadow: 0 2px 12px rgba(44,56,126,0.06); padding: 1rem 2.5rem; text-align: center; position: sticky; top: 0; z-index: 100;">
+      {/* Logo Centered */}
+      <div style="display: flex; justify-content: center; margin-bottom: 1rem;">
+        <img src="images/logoss.png" alt="Silver60 Logo" style="height:4.41rem; max-width:14rem; width:auto; object-fit:contain;">
+      </div>
+
+      {/* Navigation Links */}
+      <nav style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2rem; color: #555555; font-weight: 600;">
+        <a href="#scam-stories" style="text-decoration: none; color: #555555; transition: color 0.2s;">Scam Stories</a>
+        <a href="newsletter.html" style="text-decoration: none; color: #555555; transition: color 0.2s;">Newsletter</a>
+        <a href="#plus" style="text-decoration: none; color: #555555; transition: color 0.2s;">Silver60+</a>
+        <a href="#faq" style="text-decoration: none; color: #555555; transition: color 0.2s;">FAQs & Contact</a>
+        <a href="#join" class="cta-btn" style="background: #2563eb; color: #fff; padding: 0.7rem 1.7rem; border-radius: 12px; font-weight: 700; font-size: 1.1rem; text-decoration: none; transition: background 0.3s; box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);">Join Now!</a>
+      </nav>
     </header>
     <section class="purpose">
         <img src="https://img.icons8.com/ios-filled/50/0077cc/security-checked.png" alt="Shield Icon" style="height:2.2rem;vertical-align:middle;margin-right:0.7rem;">
@@ -408,13 +405,20 @@
             Trusted Scam Protection for Seniors — Simple, Safe, Silver60
         </span>
     </section>
-    <section class="hero" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:2.5rem;padding:3rem 1.5rem 2rem 1.5rem;background:var(--white);border-radius:32px;max-width:1200px;margin:2rem auto 2rem auto;box-shadow:0 2px 12px rgba(44,56,126,0.04);">
-      <div class="hero-text" style="max-width:540px;">
-        <h1 style="font-size:2.5rem;color:#0077cc;font-weight:800;margin-bottom:1.2rem;">🔒 Seniors Are Being Scammed Every Day. We're Here to Stop It.</h1>
-        <p style="font-size:1.2rem;color:#555555;margin-bottom:2rem;">Banks can't always protect you — but Silver60 can.<br>Get real-time scam protection, expert fraud alerts, and on-demand support from Silvia.<br>Join the growing movement keeping seniors safe across North America.</p>
-        <a href="#" class="cta-btn" style="background:#0077cc;color:#fff;font-size:1.1rem;padding:0.9rem 2.2rem;border-radius:12px;font-weight:700;margin-bottom:1.2rem;display:inline-block;">Start My Protection Now</a>
+    <section class="hero" style="background: #f9fafb; border-top: 1px solid #bfc1c2; padding: 3rem 1.5rem; text-align: center;">
+      <div style="max-width: 1200px; margin: 0 auto;">
+        <div style="display: flex; justify-content: center; align-items: center; gap: 0.7rem; margin-bottom: 1rem;">
+          <img src="https://img.icons8.com/ios-filled/50/2563eb/security-checked.png" alt="Shield Icon" style="height: 2rem;">
+          <h1 style="font-size: 2rem; color: #0077cc; font-weight: 800; margin: 0;">Trusted Scam Protection for Seniors</h1>
+        </div>
+        <p style="color: #555555; font-size: 1.2rem; max-width: 600px; margin: 0 auto 2rem auto;">
+          Join the community where staying safe online is simple, supportive, and secure.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+          <a href="newsletter.html" class="cta-btn" style="background: #2563eb; color: #fff; font-size: 1.1rem; padding: 0.9rem 2.2rem; border-radius: 12px; font-weight: 700; text-decoration: none; transition: background 0.3s;">Get the Free Newsletter</a>
+          <a href="#scam-stories" class="cta-btn" style="background: transparent; color: #2563eb; border: 2px solid #2563eb; font-size: 1.1rem; padding: 0.9rem 2.2rem; border-radius: 12px; font-weight: 700; text-decoration: none; transition: all 0.3s;">Browse Scam Stories</a>
+        </div>
       </div>
-      <video class="hero-img" src="images/FullSizeRender.mp4" style="max-width:350px;width:100%;border-radius:24px;background:var(--silver);box-shadow:0 6px 20px rgba(44,56,126,0.10);object-fit:contain;" controls></video>
     </section>
     <section class="blog-section" id="scam-stories">
         <h2 style="color:#ffffff;">Latest Scam Stories</h2>
@@ -713,7 +717,7 @@
           <div class="testimonial-img">
             <img id="testimonial-img" src="images/Mike.S_200x231.jpg" alt="testimonial">
           </div>
-          <p id="testimonial-quote"><em>“I know a lot about fishing, but not so much about phishing. Thanks to Silver60, I didn't click that fake email.”</em></p>
+          <p id="testimonial-quote"><em>"I know a lot about fishing, but not so much about phishing. Thanks to Silver60, I didn't click that fake email."</em></p>
           <p id="testimonial-name"><strong>– Mike S., 72, Fishing Enthusiast</strong></p>
           <div class="nav-buttons">
             <button onclick="prevTestimonial()">←</button>
@@ -744,7 +748,7 @@
         function updateTestimonial() {
           const t = testimonials[current];
           document.getElementById('testimonial-img').src = t.image;
-          document.getElementById('testimonial-quote').innerHTML = `“${t.quote}”`;
+          document.getElementById('testimonial-quote').innerHTML = `"${t.quote}"`;
           document.getElementById('testimonial-name').innerHTML = `<strong>– ${t.name}, ${t.age}, ${t.title}</strong>`;
           document.querySelectorAll('.dot').forEach((dot, i) => {
             dot.classList.toggle('active', i === current);
