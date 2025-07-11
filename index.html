@@ -384,10 +384,15 @@
     </style>
 </head>
 <body>
-    <header style="background: #fff; border-bottom: 1px solid #bfc1c2; padding: 0.75rem 1.5rem; text-align: center; position: sticky; top: 0; z-index: 100;">
-      <div style="max-width: 1200px; margin: 0 auto;">
-        <div style="display: flex; justify-content: center; margin-bottom: 0.75rem;">
-          <img src="images/logoss.png" alt="Silver60 Logo" style="height:2.5rem; width:auto; margin: 0 auto; object-fit:contain;">
+    <header style="background: #fff; border-bottom: 1px solid #bfc1c2; padding: 0.75rem 1.5rem; max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
+      <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+        <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; margin-bottom: 0.75rem;">
+          <div style="flex-shrink: 0;">
+            <img src="images/logoss.png" alt="Silver60 Logo" style="height:3.5rem; width:auto; object-fit:contain;">
+          </div>
+          <div>
+            <a href="#join" class="cta-btn" style="background: #2563eb; color: #fff; padding: 0.5rem 1.25rem; border-radius: 12px; font-weight: 700; font-size: 1rem; text-decoration: none; transition: all 0.3s; box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);" onmouseover="this.style.background='#0077cc'" onmouseout="this.style.background='#2563eb'">Join Now!</a>
+          </div>
         </div>
 
         <nav style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1.5rem; color: #555555; font-weight: 500;">
@@ -396,7 +401,6 @@
           <a href="#plus" style="text-decoration: none; color: #555555; transition: all 0.3s; padding-bottom: 0.25rem; border-bottom: 2px solid transparent;" onmouseover="this.style.color='#0077cc'; this.style.borderBottom='2px solid #2563eb'" onmouseout="this.style.color='#555555'; this.style.borderBottom='2px solid transparent'">Silver60+</a>
           <a href="#about" style="text-decoration: none; color: #555555; transition: all 0.3s; padding-bottom: 0.25rem; border-bottom: 2px solid transparent;" onmouseover="this.style.color='#0077cc'; this.style.borderBottom='2px solid #2563eb'" onmouseout="this.style.color='#555555'; this.style.borderBottom='2px solid transparent'">About Us</a>
           <a href="#faq" style="text-decoration: none; color: #555555; transition: all 0.3s; padding-bottom: 0.25rem; border-bottom: 2px solid transparent;" onmouseover="this.style.color='#0077cc'; this.style.borderBottom='2px solid #2563eb'" onmouseout="this.style.color='#555555'; this.style.borderBottom='2px solid transparent'">FAQs & Contact</a>
-          <a href="#join" class="cta-btn" style="background: #2563eb; color: #fff; padding: 0.5rem 1.25rem; border-radius: 12px; font-weight: 700; font-size: 1rem; text-decoration: none; transition: all 0.3s; box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);" onmouseover="this.style.background='#0077cc'" onmouseout="this.style.background='#2563eb'">Join Now!</a>
         </nav>
       </div>
     </header>
